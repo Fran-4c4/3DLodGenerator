@@ -4,6 +4,8 @@
 A local command-line application with no database, container or authentication
 requirement. The current workflow reconstructs **LoD0 and LoD1**.
 
+![Oblique view of buildings reconstructed along the Las Canteras waterfront](examples/las_canteras/las-canteras-overview.png)
+
 The first **Road/Terrain/Forest/Water** surface stage is now available through
 `build-surfaces`. It generates individual surfaces and reports, without scene
 stitching. Start with [the surface tutorial](docs/surface_workflow.md).
