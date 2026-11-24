@@ -1,0 +1,145 @@
+{
+  "summary": {
+    "status": "complete",
+    "dataset_id": "parameter-density",
+    "source_objects": 2,
+    "source_buildings": 1,
+    "source_parts": 1,
+    "resolved_units": 1,
+    "unresolved_units": 0,
+    "excluded_objects": 0,
+    "methods": {
+      "direct": 1
+    },
+    "models": {
+      "1": {
+        "objects": 2,
+        "geometry_objects": 1,
+        "closed_shells": 1,
+        "faces": 6,
+        "vertices": 8
+      }
+    }
+  },
+  "objects": [
+    {
+      "key": "BuildingPart::terrace",
+      "source_id": "terrace",
+      "kind": "BuildingPart",
+      "parent_id": "example",
+      "issues": [],
+      "parent_relation": {
+        "outside_area_m2": 0.0,
+        "overlap_fraction": 1.0
+      },
+      "part_id": "BuildingPart::terrace",
+      "building_id": "example",
+      "height_m": 2.0,
+      "method": "direct",
+      "ground_z": 25.0,
+      "roof_mode_z": 27.0,
+      "n_points": 8,
+      "density_points_m2": 4.0,
+      "roof_strength": 1.0,
+      "bimodal": false,
+      "floor_height_m": null,
+      "reference_part_id": null,
+      "flags": [
+        "quantity_supported_by_density"
+      ],
+      "inferred_roof_support_fraction": null,
+      "roof_reference_z": 27.0,
+      "sample_area_m2": 2.0,
+      "erosion": "not_applied_geometry_attribution",
+      "coverage_complete": true,
+      "ground_samples": 56,
+      "ground_candidates": 56,
+      "ground_radius_m": 8.0,
+      "ground_free_area_m2": 248.73910339480594,
+      "roof_surface": {
+        "accepted": true,
+        "reason": "attributed_geometric_surfaces",
+        "roof_z": 27.00000000000001,
+        "planes": [
+          {
+            "local_coefficients": [
+              7.78205134420139e-15,
+              1.0658141036401503e-14,
+              26.999999999999993
+            ],
+            "xy_origin": [
+              500000.25,
+              3100000.25
+            ],
+            "slope_deg": 7.561225999242776e-13,
+            "cells": 8,
+            "rmse_m": 5.617333549722722e-15,
+            "fitted_upper_z": 27.00000000000001,
+            "observed_z_range": [
+              27.0,
+              27.0
+            ],
+            "raw_plane_inliers": 8
+          }
+        ],
+        "retained_cells": 8,
+        "storeys_used": false,
+        "applied_to_height": false
+      },
+      "building_surfaces": {
+        "selection_policy": "xyz_footprints_adjacent_surfaces",
+        "accepted": true,
+        "original_representatives": 8,
+        "retained_surface_representatives": 8,
+        "spacing_m": 0.5,
+        "planes": [
+          {
+            "local_coefficients": [
+              7.78205134420139e-15,
+              1.0658141036401503e-14,
+              26.999999999999993
+            ],
+            "xy_origin": [
+              500000.25,
+              3100000.25
+            ],
+            "slope_deg": 7.561225999242776e-13,
+            "cells": 8,
+            "rmse_m": 5.617333549722722e-15,
+            "fitted_upper_z": 27.00000000000001,
+            "observed_z_range": [
+              27.0,
+              27.0
+            ],
+            "raw_plane_inliers": 8
+          }
+        ],
+        "candidates": [
+          {
+            "roof_z": 27.00000000000001,
+            "visible_area_m2": 2.0,
+            "supported_area_m2": 2.0,
+            "coverage": 1.0,
+            "independent_points": 8,
+            "accepted": true
+          }
+        ],
+        "rejected_neighbour_planes": [],
+        "neighbour_ids": [],
+        "source_classes_used": false,
+        "independent_interior_support": false,
+        "inclined_continuous_roof": false,
+        "geometry_envelope_required": false,
+        "selection_basis": "spatial_support",
+        "context_floor_height_m": null,
+        "roof_z": 27.00000000000001
+      },
+      "sampled_roof_points": 8,
+      "reference_height_m": null,
+      "reference_role": "comparison_only",
+      "delta_from_reference_m": null,
+      "reconstructed_top_z": 27.0,
+      "status": "resolved"
+    }
+  ]
+}

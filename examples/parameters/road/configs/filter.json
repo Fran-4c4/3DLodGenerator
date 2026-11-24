@@ -1,0 +1,14 @@
+{
+  "config_version": "1",
+  "dataset_id": "parameter-road",
+  "working_epsg": 25828,
+  "vertical_reference": "local_relative",
+  "lidar": [
+    "../inputs/cloud.las"
+  ],
+  "surface_contract": "0.1",
+  "polygons": "../inputs/footprints.gpkg",
+  "radius_m": 0.04,
+  "road_filter_outliers": true,
+  "road_flatten": false
+}

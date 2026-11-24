@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3DLodExt · Parameter comparisons</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f1f4f6;color:#253b46;font:14px system-ui,sans-serif}header{padding:16px 24px;background:white;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}h1{font-size:20px;margin:0 0 5px}p{margin:0;font-size:12px;color:#536974;line-height:1.6}select,button{font:inherit;border:1px solid #b9cbd2;border-radius:6px;padding:8px 12px;background:white;color:#294c56}button[aria-pressed=true]{background:#176d70;color:white;border-color:#176d70}nav{display:flex;gap:8px;flex-wrap:wrap}#labels{display:grid;background:#fff;border-top:1px solid #dce5e9;border-bottom:1px solid #dce5e9}article{padding:14px 18px;border-right:1px solid #dce5e9;min-width:0}h2{font-size:17px;margin:0 0 8px}article p{white-space:pre-line;font-size:12px;line-height:1.6}b.status{font-size:11px;float:right;text-transform:uppercase;color:#4c7d67}b.partial{color:#a8563b}#view{height:62vh;min-height:340px}canvas{display:block;width:100%;height:100%}footer{padding:12px 24px;background:white;display:flex;gap:20px;flex-wrap:wrap;color:#526773;font-size:12px}i{display:inline-block;width:11px;height:11px;margin-right:6px;border-radius:2px}.capture header,.capture footer{display:none}.capture #view{height:calc(100vh - 140px);min-height:0}.capture #labels{height:140px}.capture h2{font-size:23px}.capture article p{font-size:16px}.capture b.status{font-size:12px}#error{padding:20px;color:#9e3e30}
+@media(max-width:650px){header{padding:12px}h1{font-size:18px}article{padding:10px 7px}h2{font-size:12px}article p{font-size:10px}b.status{float:none;display:block;font-size:9px}#view{height:52vh;min-height:280px}footer{padding:12px;font-size:11px}}
+</style></head><body>
+<header><div><h1 id="title">Parameter comparisons</h1><p>Same XYZ and camera · actual reconstructed models · original synthetic data</p></div><select id="family" aria-label="Example"></select><nav><button data-mode="model" aria-pressed="true">3D result</button><button data-mode="sampling" aria-pressed="false">LiDAR candidates</button></nav></header>
+<div id="labels"></div><main id="view" aria-label="Side-by-side generated results"></main><div id="error" hidden></div>
+<footer><span><i style="background:#d9957e"></i>Generated geometry</span><span><i style="background:#7751a1"></i>Original LAS label 6</span><span><i style="background:#258658"></i>Original LAS label 5</span><span>Bright: footprint candidates; faint: context</span><span><i style="background:#3a8c77"></i>Received footprint</span><span>Drag to rotate all views together · scroll to zoom</span></footer>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js"}}</script>
+<script type="module">
+// Display-only URL contract: family must be an ID in catalog.json; absent family
+// selects its first entry. mode is model|sampling, default model; other values
+// fail. capture=1 hides controls for figures, other values retain them. A single
+// camera and equal-sized scissor viewports compare actual geometry without
+// vertical exaggeration. Presentation field semantics live beside its producer
+// in tools/generate_parameter_examples.py. No option controls reconstruction.
+import * as THREE from 'three';
+import {OrbitControls} from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js';
+const q=new URLSearchParams(location.search);if(q.get('capture')==='1')document.body.classList.add('capture');
+try{
+ const catalog=await (await fetch('catalog.json')).json();
+ const family=q.get('family')||catalog.families[0].id;
+ if(!catalog.families.some(f=>f.id===family))throw Error('Unknown example');
+ const data=await (await fetch(family+'/presentation.json')).json();
+ document.querySelector('#title').textContent=data.title;
+ const select=document.querySelector('#family');for(const f of catalog.families){const o=document.createElement('option');o.value=f.id;o.textContent=f.title;select.add(o)}select.value=family;
+ select.onchange=()=>{const url=new URL(location.href);url.searchParams.set('family',select.value);location.href=url};
+ const labels=document.querySelector('#labels');labels.style.gridTemplateColumns=`repeat(${data.cases.length},minmax(0,1fr))`;
+ for(const c of data.cases){const a=document.createElement('article'),h=document.createElement('h2'),s=document.createElement('b'),p=document.createElement('p');h.textContent=c.title;s.textContent=c.status==='partial'?'Review needed':'Complete';s.className='status '+c.status;p.textContent=c.metrics;a.append(h,s,p);labels.append(a)}
+ const view=document.querySelector('#view'),renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+ renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.outputEncoding=THREE.sRGBEncoding;renderer.setScissorTest(true);view.append(renderer.domElement);
+ const camera=new THREE.OrthographicCamera(-10,10,10,-10,.01,1000),controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.maxPolarAngle=Math.PI/2-.01;
+ const [x1,y1,x2,y2]=data.extent,centre=new THREE.Vector3((x1+x2)/2,(data.min_z+data.max_z)/2,-(y1+y2)/2);
+ const scenes=[];const materials={BuildingPart:0xd9957e,Road:0xa4b5bf,WaterBody:0x6eafc9,TINRelief:0xc6c2a0,PlantCover:0xa9c79a};
+ const linear=hex=>new THREE.Color(hex).convertSRGBToLinear();
+ function lines(ring,z,colour,dashed=false){const ps=ring.map(([x,y])=>new THREE.Vector3(x,z,-y));const g=new THREE.BufferGeometry().setFromPoints(ps);const mat=dashed?new THREE.LineDashedMaterial({color:linear(colour),dashSize:.25,gapSize:.15}):new THREE.LineBasicMaterial({color:linear(colour)});const line=new THREE.Line(g,mat);line.computeLineDistances();return line}
+ function points(flat,classes,selected){const a=[],rgb=[];for(let i=0;i<flat.length;i+=3){a.push(flat[i],flat[i+2],-flat[i+1]);const cls=classes[i/3],c=linear(cls===6?0x7751a1:cls===5?0x258658:cls===9?0x387d9b:0x87949f);if(!selected)c.lerp(linear(0xf1f4f6),.70);rgb.push(c.r,c.g,c.b)}const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(a,3));g.setAttribute('color',new THREE.Float32BufferAttribute(rgb,3));return new THREE.Points(g,new THREE.PointsMaterial({vertexColors:true,size:selected?5:3,sizeAttenuation:false}))}
+ for(const c of data.cases){
+  const scene=new THREE.Scene();scene.background=new THREE.Color('#f1f4f6');scene.add(new THREE.HemisphereLight(0xffffff,0xc7c1b8,.7));const sun=new THREE.DirectionalLight(0xffffff,.75);sun.position.set(-10,30,15);scene.add(sun);
+  const model=new THREE.Group(),sample=new THREE.Group();scene.add(model,sample);
+  for(const mesh of c.meshes){const ps=[];for(let i=0;i<mesh.positions.length;i+=3)ps.push(mesh.positions[i],mesh.positions[i+2],-mesh.positions[i+1]);const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(ps,3));g.computeVertexNormals();model.add(new THREE.Mesh(g,new THREE.MeshStandardMaterial({color:linear(materials[mesh.type]||0xd9957e),roughness:1,side:THREE.DoubleSide})));model.add(new THREE.LineSegments(new THREE.EdgesGeometry(g,25),new THREE.LineBasicMaterial({color:linear(0x76584c),transparent:true,opacity:.35})))}
+  for(const ring of data.footprints){model.add(lines(ring,.015,0xb15e45,true));sample.add(lines(ring,-.025,0xb15e45,true))}
+  for(const ring of c.support)sample.add(lines(ring,.02,0x26765f));
+  sample.add(points(c.rejected_xyz,c.rejected_classes,false),points(c.selected_xyz,c.selected_classes,true));
+  scenes.push({scene,model,sample});
+ }
+ let mode;
+ function fit(){
+  const top=mode==='sampling';camera.up.set(0,1,0);camera.position.copy(centre).add(new THREE.Vector3(-18,17,22));
+  if(top){camera.up.set(0,0,-1);camera.position.copy(centre).add(new THREE.Vector3(0,50,.001))}
+  camera.lookAt(centre);camera.updateMatrixWorld();let mx=0,my=0;
+  for(const x of [x1,x2])for(const y of [data.min_z-.3,data.max_z+.3])for(const z of [-y1,-y2]){const p=new THREE.Vector3(x,y,z).applyMatrix4(camera.matrixWorldInverse);mx=Math.max(mx,Math.abs(p.x));my=Math.max(my,Math.abs(p.y))}
+  const aspect=view.clientWidth/data.cases.length/view.clientHeight,h=Math.max(my,mx/aspect)*1.10;Object.assign(camera,{left:-h*aspect,right:h*aspect,top:h,bottom:-h});camera.updateProjectionMatrix();controls.target.copy(centre);controls.update();
+ }
+ window.setParameterMode=value=>{if(!['model','sampling'].includes(value))throw Error('Unknown mode');mode=value;for(const item of scenes){item.model.visible=mode==='model';item.sample.visible=mode==='sampling'}for(const b of document.querySelectorAll('[data-mode]'))b.setAttribute('aria-pressed',String(b.dataset.mode===mode));fit();window.parameterMode=mode};
+ for(const b of document.querySelectorAll('[data-mode]'))b.onclick=()=>window.setParameterMode(b.dataset.mode);
+ function resize(){renderer.setSize(view.clientWidth,view.clientHeight);fit()}
+ window.addEventListener('resize',resize);window.setParameterMode(q.get('mode')||'model');resize();
+ renderer.setAnimationLoop(()=>{controls.update();const w=view.clientWidth,h=view.clientHeight;for(let i=0;i<scenes.length;i++){const left=Math.floor(w*i/scenes.length),right=Math.floor(w*(i+1)/scenes.length);renderer.setViewport(left,0,right-left,h);renderer.setScissor(left,0,right-left,h);renderer.render(scenes[i].scene,camera)}});
+ window.parameterReady=true;
+}catch(error){document.querySelector('#error').hidden=false;document.querySelector('#error').textContent=error.message;window.parameterError=error.message;throw error}
+</script></body></html>

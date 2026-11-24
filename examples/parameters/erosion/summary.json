@@ -1,0 +1,460 @@
+{
+  "family": "erosion",
+  "title": "Boundary uncertainty and edge contamination",
+  "input_sha256": {
+    "build.lidar.json": "d7a13f0deedb3325022dd038f0c0644ce4632cf607c9e4040edc179eba87bd62",
+    "cloud.las": "edcb750bfe1ad78c1d328877a2e259974062f2f9767ecd3b89a48f92cc925ae4",
+    "dtm.tif": "802bee74ba0ae227693c74fe87a961a1108701471116e3302959d24565ef96e8",
+    "footprints.gpkg": "83d8d0d11fde7ac10806f9b1384d16ef35bb2797d5e849a250dd475cf14b0ca1",
+    "truth.json": "052a1c7f661b7280915210144dc2608c988398a0730ef7c1124bb9f4da3258d0"
+  },
+  "cases": [
+    {
+      "id": "none",
+      "title": "0 m uncertainty",
+      "settings": {
+        "building_surfaces": {
+          "registration_m": 0
+        }
+      },
+      "status": "complete",
+      "objects": [
+        {
+          "key": "BuildingPart::main",
+          "source_id": "main",
+          "kind": "BuildingPart",
+          "parent_id": "example",
+          "issues": [],
+          "parent_relation": {
+            "outside_area_m2": 0.0,
+            "overlap_fraction": 1.0
+          },
+          "part_id": "BuildingPart::main",
+          "building_id": "example",
+          "height_m": 6.0,
+          "method": "direct",
+          "ground_z": 25.0,
+          "roof_mode_z": 31.0,
+          "n_points": 196,
+          "density_points_m2": 1.96,
+          "roof_strength": 1.0,
+          "bimodal": false,
+          "floor_height_m": null,
+          "reference_part_id": null,
+          "flags": [],
+          "inferred_roof_support_fraction": null,
+          "roof_reference_z": 31.0,
+          "sample_area_m2": 100.0,
+          "erosion": "not_applied_geometry_attribution",
+          "coverage_complete": true,
+          "ground_samples": 104,
+          "ground_candidates": 104,
+          "ground_radius_m": 8.0,
+          "ground_free_area_m2": 520.7391033948061,
+          "roof_surface": {
+            "accepted": true,
+            "reason": "attributed_geometric_surfaces",
+            "roof_z": 31.000000000000096,
+            "planes": [
+              {
+                "local_coefficients": [
+                  1.4963651987308486e-14,
+                  -1.5987211554602254e-14,
+                  30.999999999999996
+                ],
+                "xy_origin": [
+                  500001.565,
+                  3100001.565
+                ],
+                "slope_deg": 1.2546360428957697e-12,
+                "cells": 196,
+                "rmse_m": 4.460280941548982e-14,
+                "fitted_upper_z": 31.000000000000096,
+                "observed_z_range": [
+                  31.0,
+                  31.0
+                ],
+                "raw_plane_inliers": 196
+              }
+            ],
+            "retained_cells": 196,
+            "storeys_used": false,
+            "applied_to_height": false
+          },
+          "building_surfaces": {
+            "selection_policy": "xyz_footprints_adjacent_surfaces",
+            "accepted": true,
+            "original_representatives": 400,
+            "retained_surface_representatives": 400,
+            "spacing_m": 0.5,
+            "planes": [
+              {
+                "local_coefficients": [
+                  2.7354179186362928e-15,
+                  -1.7763568394002505e-15,
+                  34.99999999999999
+                ],
+                "xy_origin": [
+                  500000.224,
+                  3100000.224
+                ],
+                "slope_deg": 1.8687521398779333e-13,
+                "cells": 204,
+                "rmse_m": 1.1929137443986294e-14,
+                "fitted_upper_z": 35.00000000000002,
+                "observed_z_range": [
+                  35.0,
+                  35.0
+                ],
+                "raw_plane_inliers": 204
+              },
+              {
+                "local_coefficients": [
+                  1.4963651987308486e-14,
+                  -1.5987211554602254e-14,
+                  30.999999999999996
+                ],
+                "xy_origin": [
+                  500001.565,
+                  3100001.565
+                ],
+                "slope_deg": 1.2546360428957697e-12,
+                "cells": 196,
+                "rmse_m": 4.460280941548982e-14,
+                "fitted_upper_z": 31.000000000000096,
+                "observed_z_range": [
+                  31.0,
+                  31.0
+                ],
+                "raw_plane_inliers": 196
+              }
+            ],
+            "candidates": [
+              {
+                "roof_z": 31.000000000000096,
+                "visible_area_m2": 57.72870161303192,
+                "supported_area_m2": 56.581106419080626,
+                "coverage": 0.9801208902697331,
+                "independent_points": 196,
+                "accepted": true
+              }
+            ],
+            "rejected_neighbour_planes": [],
+            "neighbour_ids": [],
+            "source_classes_used": false,
+            "independent_interior_support": true,
+            "inclined_continuous_roof": false,
+            "geometry_envelope_required": false,
+            "selection_basis": "spatial_support",
+            "context_floor_height_m": null,
+            "roof_z": 31.000000000000096
+          },
+          "sampled_roof_points": 196,
+          "reference_height_m": null,
+          "reference_role": "comparison_only",
+          "delta_from_reference_m": null,
+          "reconstructed_top_z": 31.0,
+          "status": "resolved"
+        }
+      ]
+    },
+    {
+      "id": "half",
+      "title": "0.25 m uncertainty",
+      "settings": {
+        "building_surfaces": {
+          "registration_m": 0.25
+        }
+      },
+      "status": "complete",
+      "objects": [
+        {
+          "key": "BuildingPart::main",
+          "source_id": "main",
+          "kind": "BuildingPart",
+          "parent_id": "example",
+          "issues": [],
+          "parent_relation": {
+            "outside_area_m2": 0.0,
+            "overlap_fraction": 1.0
+          },
+          "part_id": "BuildingPart::main",
+          "building_id": "example",
+          "height_m": 6.0,
+          "method": "direct",
+          "ground_z": 25.0,
+          "roof_mode_z": 31.0,
+          "n_points": 196,
+          "density_points_m2": 1.96,
+          "roof_strength": 1.0,
+          "bimodal": false,
+          "floor_height_m": null,
+          "reference_part_id": null,
+          "flags": [],
+          "inferred_roof_support_fraction": null,
+          "roof_reference_z": 31.0,
+          "sample_area_m2": 100.0,
+          "erosion": "not_applied_geometry_attribution",
+          "coverage_complete": true,
+          "ground_samples": 104,
+          "ground_candidates": 104,
+          "ground_radius_m": 8.0,
+          "ground_free_area_m2": 520.7391033948061,
+          "roof_surface": {
+            "accepted": true,
+            "reason": "attributed_geometric_surfaces",
+            "roof_z": 31.000000000000096,
+            "planes": [
+              {
+                "local_coefficients": [
+                  1.4963651987308486e-14,
+                  -1.5987211554602254e-14,
+                  30.999999999999996
+                ],
+                "xy_origin": [
+                  500001.565,
+                  3100001.565
+                ],
+                "slope_deg": 1.2546360428957697e-12,
+                "cells": 196,
+                "rmse_m": 4.460280941548982e-14,
+                "fitted_upper_z": 31.000000000000096,
+                "observed_z_range": [
+                  31.0,
+                  31.0
+                ],
+                "raw_plane_inliers": 196
+              }
+            ],
+            "retained_cells": 196,
+            "storeys_used": false,
+            "applied_to_height": false
+          },
+          "building_surfaces": {
+            "selection_policy": "xyz_footprints_adjacent_surfaces",
+            "accepted": true,
+            "original_representatives": 400,
+            "retained_surface_representatives": 400,
+            "spacing_m": 0.5,
+            "planes": [
+              {
+                "local_coefficients": [
+                  2.7354179186362928e-15,
+                  -1.7763568394002505e-15,
+                  34.99999999999999
+                ],
+                "xy_origin": [
+                  500000.224,
+                  3100000.224
+                ],
+                "slope_deg": 1.8687521398779333e-13,
+                "cells": 204,
+                "rmse_m": 1.1929137443986294e-14,
+                "fitted_upper_z": 35.00000000000002,
+                "observed_z_range": [
+                  35.0,
+                  35.0
+                ],
+                "raw_plane_inliers": 204
+              },
+              {
+                "local_coefficients": [
+                  1.4963651987308486e-14,
+                  -1.5987211554602254e-14,
+                  30.999999999999996
+                ],
+                "xy_origin": [
+                  500001.565,
+                  3100001.565
+                ],
+                "slope_deg": 1.2546360428957697e-12,
+                "cells": 196,
+                "rmse_m": 4.460280941548982e-14,
+                "fitted_upper_z": 31.000000000000096,
+                "observed_z_range": [
+                  31.0,
+                  31.0
+                ],
+                "raw_plane_inliers": 196
+              }
+            ],
+            "candidates": [
+              {
+                "roof_z": 31.000000000000096,
+                "visible_area_m2": 65.13789312250961,
+                "supported_area_m2": 65.13789312250961,
+                "coverage": 1.0,
+                "independent_points": 196,
+                "accepted": true
+              }
+            ],
+            "rejected_neighbour_planes": [],
+            "neighbour_ids": [],
+            "source_classes_used": false,
+            "independent_interior_support": true,
+            "inclined_continuous_roof": false,
+            "geometry_envelope_required": false,
+            "selection_basis": "spatial_support",
+            "context_floor_height_m": null,
+            "roof_z": 31.000000000000096
+          },
+          "sampled_roof_points": 196,
+          "reference_height_m": null,
+          "reference_role": "comparison_only",
+          "delta_from_reference_m": null,
+          "reconstructed_top_z": 31.0,
+          "status": "resolved"
+        }
+      ]
+    },
+    {
+      "id": "one",
+      "title": "0.5 m uncertainty",
+      "settings": {
+        "building_surfaces": {
+          "registration_m": 0.5
+        }
+      },
+      "status": "complete",
+      "objects": [
+        {
+          "key": "BuildingPart::main",
+          "source_id": "main",
+          "kind": "BuildingPart",
+          "parent_id": "example",
+          "issues": [],
+          "parent_relation": {
+            "outside_area_m2": 0.0,
+            "overlap_fraction": 1.0
+          },
+          "part_id": "BuildingPart::main",
+          "building_id": "example",
+          "height_m": 6.0,
+          "method": "direct",
+          "ground_z": 25.0,
+          "roof_mode_z": 31.0,
+          "n_points": 196,
+          "density_points_m2": 1.96,
+          "roof_strength": 1.0,
+          "bimodal": false,
+          "floor_height_m": null,
+          "reference_part_id": null,
+          "flags": [],
+          "inferred_roof_support_fraction": null,
+          "roof_reference_z": 31.0,
+          "sample_area_m2": 100.0,
+          "erosion": "not_applied_geometry_attribution",
+          "coverage_complete": true,
+          "ground_samples": 104,
+          "ground_candidates": 104,
+          "ground_radius_m": 8.0,
+          "ground_free_area_m2": 520.7391033948061,
+          "roof_surface": {
+            "accepted": true,
+            "reason": "attributed_geometric_surfaces",
+            "roof_z": 31.000000000000096,
+            "planes": [
+              {
+                "local_coefficients": [
+                  1.4963651987308486e-14,
+                  -1.5987211554602254e-14,
+                  30.999999999999996
+                ],
+                "xy_origin": [
+                  500001.565,
+                  3100001.565
+                ],
+                "slope_deg": 1.2546360428957697e-12,
+                "cells": 196,
+                "rmse_m": 4.460280941548982e-14,
+                "fitted_upper_z": 31.000000000000096,
+                "observed_z_range": [
+                  31.0,
+                  31.0
+                ],
+                "raw_plane_inliers": 196
+              }
+            ],
+            "retained_cells": 196,
+            "storeys_used": false,
+            "applied_to_height": false
+          },
+          "building_surfaces": {
+            "selection_policy": "xyz_footprints_adjacent_surfaces",
+            "accepted": true,
+            "original_representatives": 400,
+            "retained_surface_representatives": 400,
+            "spacing_m": 0.5,
+            "planes": [
+              {
+                "local_coefficients": [
+                  2.7354179186362928e-15,
+                  -1.7763568394002505e-15,
+                  34.99999999999999
+                ],
+                "xy_origin": [
+                  500000.224,
+                  3100000.224
+                ],
+                "slope_deg": 1.8687521398779333e-13,
+                "cells": 204,
+                "rmse_m": 1.1929137443986294e-14,
+                "fitted_upper_z": 35.00000000000002,
+                "observed_z_range": [
+                  35.0,
+                  35.0
+                ],
+                "raw_plane_inliers": 204
+              },
+              {
+                "local_coefficients": [
+                  1.4963651987308486e-14,
+                  -1.5987211554602254e-14,
+                  30.999999999999996
+                ],
+                "xy_origin": [
+                  500001.565,
+                  3100001.565
+                ],
+                "slope_deg": 1.2546360428957697e-12,
+                "cells": 196,
+                "rmse_m": 4.460280941548982e-14,
+                "fitted_upper_z": 31.000000000000096,
+                "observed_z_range": [
+                  31.0,
+                  31.0
+                ],
+                "raw_plane_inliers": 196
+              }
+            ],
+            "candidates": [
+              {
+                "roof_z": 31.000000000000096,
+                "visible_area_m2": 73.08332999329295,
+                "supported_area_m2": 73.08332999329295,
+                "coverage": 1.0,
+                "independent_points": 196,
+                "accepted": true
+              }
+            ],
+            "rejected_neighbour_planes": [],
+            "neighbour_ids": [],
+            "source_classes_used": false,
+            "independent_interior_support": true,
+            "inclined_continuous_roof": false,
+            "geometry_envelope_required": false,
+            "selection_basis": "spatial_support",
+            "context_floor_height_m": null,
+            "roof_z": 31.000000000000096
+          },
+          "sampled_roof_points": 196,
+          "reference_height_m": null,
+          "reference_role": "comparison_only",
+          "delta_from_reference_m": null,
+          "reconstructed_top_z": 31.0,
+          "status": "resolved"
+        }
+      ]
+    }
+  ]
+}

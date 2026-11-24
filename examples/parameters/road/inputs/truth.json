@@ -1,0 +1,8 @@
+{
+  "base_z_m": 25,
+  "parts": {},
+  "description": "Original synthetic controls, not surveyed data",
+  "roof_nominal_points_m2": 5,
+  "ground_grid_spacing_m": 2,
+  "surface_control": "Water: 24 m with a high tail at 25 m; road: 25 + .1x + .03y, boundary noise up to 0.13 m and one +3 m spike"
+}

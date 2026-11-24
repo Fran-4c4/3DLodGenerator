@@ -1,0 +1,142 @@
+{
+  "type": "CityJSON",
+  "version": "2.0",
+  "transform": {
+    "scale": [
+      0.001,
+      0.001,
+      0.001
+    ],
+    "translate": [
+      500000.0,
+      3100000.0,
+      0
+    ]
+  },
+  "metadata": {
+    "identifier": "parameter-ground-lod1",
+    "title": "parameter-ground LoD1",
+    "referenceSystem": "https://www.opengis.net/def/crs/EPSG/0/25828",
+    "geographicalExtent": [
+      500000.0,
+      3100000.0,
+      0.0,
+      500010.0,
+      3100010.0,
+      0.0
+    ]
+  },
+  "CityObjects": {
+    "Building::example": {
+      "type": "Building",
+      "attributes": {
+        "sourceId": "example",
+        "sourceClass": "Building",
+        "reconstructionStatus": "parent",
+        "issues": []
+      },
+      "geometry": [],
+      "children": [
+        "BuildingPart::main"
+      ]
+    },
+    "BuildingPart::main": {
+      "type": "BuildingPart",
+      "attributes": {
+        "sourceId": "main",
+        "sourceClass": "BuildingPart",
+        "reconstructionStatus": "unresolved",
+        "issues": [
+          "no_roof_points",
+          "missing_ground"
+        ],
+        "building_surfaces": {
+          "selection_policy": "xyz_footprints_adjacent_surfaces",
+          "accepted": false,
+          "original_representatives": 400,
+          "retained_surface_representatives": 0,
+          "spacing_m": 0.5,
+          "planes": [],
+          "candidates": [],
+          "rejected_neighbour_planes": [],
+          "neighbour_ids": [],
+          "source_classes_used": false,
+          "independent_interior_support": false,
+          "inclined_continuous_roof": false,
+          "geometry_envelope_required": false,
+          "selection_basis": "spatial_support",
+          "context_floor_height_m": null,
+          "roof_z": null
+        },
+        "height_m": null,
+        "ground_z": null,
+        "reconstructed_top_z": null,
+        "method": "unresolved",
+        "n_points": 0,
+        "density_points_m2": 0.0,
+        "ground_method": null,
+        "ground_excluded_inside_buildings": null,
+        "ground_min_z": null,
+        "ground_max_z": null,
+        "ground_median_error_bound_m": null,
+        "reference_part_id": null,
+        "floor_height_m": null,
+        "roof_mode_z": null,
+        "roof_strength": 0.0,
+        "inferred_roof_support_fraction": null,
+        "roof_reference_z": null,
+        "representation": "unresolved_footprint",
+        "display_reference_z": 0,
+        "display_placement": "display_reference_only"
+      },
+      "geometry": [
+        {
+          "type": "MultiSurface",
+          "lod": "0",
+          "boundaries": [
+            [
+              [
+                0,
+                1,
+                2,
+                3
+              ]
+            ]
+          ]
+        }
+      ],
+      "parents": [
+        "Building::example"
+      ]
+    }
+  },
+  "vertices": [
+    [
+      10000,
+      0,
+      0
+    ],
+    [
+      10000,
+      10000,
+      0
+    ],
+    [
+      0,
+      10000,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ]
+  ],
+  "lodext": {
+    "vertical_reference": "local_relative",
+    "z_unit": "m",
+    "clamping_applied": false,
+    "height_source": "lidar",
+    "input_contract": "0.2"
+  }
+}

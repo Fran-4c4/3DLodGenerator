@@ -1,0 +1,13 @@
+{
+  "base_z_m": 25,
+  "parts": {
+    "terrace": {
+      "height_m": 2.0,
+      "area_m2": 2.0
+    }
+  },
+  "description": "Original synthetic controls, not surveyed data",
+  "roof_nominal_points_m2": 5,
+  "ground_grid_spacing_m": 2,
+  "surface_control": null
+}

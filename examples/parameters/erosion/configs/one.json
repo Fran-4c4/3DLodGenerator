@@ -1,0 +1,22 @@
+{
+  "config_version": "1",
+  "dataset_id": "parameter-erosion",
+  "working_epsg": 25828,
+  "vertical_reference": "local_relative",
+  "lidar": [
+    "../inputs/cloud.las"
+  ],
+  "contract_version": "0.2",
+  "geometry_mode": "parts",
+  "footprints": "../inputs/footprints.gpkg",
+  "dtm": "../inputs/dtm.tif",
+  "lods": [
+    1
+  ],
+  "sampling": {
+    "erode_m": 0
+  },
+  "building_surfaces": {
+    "registration_m": 0.5
+  }
+}

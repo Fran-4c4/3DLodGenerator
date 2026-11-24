@@ -1,0 +1,255 @@
+{
+  "family": "road",
+  "title": "Road filtering and smoothing",
+  "input_sha256": {
+    "build.lidar.json": "d7a13f0deedb3325022dd038f0c0644ce4632cf607c9e4040edc179eba87bd62",
+    "cloud.las": "024f73aaff688976eaf693e1c1cb88d9884bddddc049284f30d6bf532eb8807b",
+    "dtm.tif": "802bee74ba0ae227693c74fe87a961a1108701471116e3302959d24565ef96e8",
+    "footprints.gpkg": "097495c017ecb50f1f778689813e58fc06bee11bbe503b1b9d69b8d35ebbcad5",
+    "truth.json": "0900666bb96965861dff43bd816324d9f793641c2ddf03e2c5d14b09027ab933"
+  },
+  "cases": [
+    {
+      "id": "raw",
+      "title": "Raw elevations",
+      "settings": {
+        "road_filter_outliers": false,
+        "road_flatten": false
+      },
+      "status": "complete",
+      "objects": [
+        {
+          "source_id": "road",
+          "source_class": "Road",
+          "coverage_complete": true,
+          "status": "resolved",
+          "method": "boundary_rank",
+          "sample_points": 12,
+          "water_level_z": null,
+          "components": [
+            {
+              "boundary_vertices": 12,
+              "boundary_support_counts": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "borrowed_boundary_indices": [],
+              "raw_boundary_z": [
+                25.0,
+                25.306,
+                25.327,
+                28.629,
+                25.933,
+                25.902,
+                26.211000000000002,
+                25.900000000000002,
+                25.858,
+                25.486,
+                25.424,
+                25.14
+              ],
+              "boundary_z": [
+                25.0,
+                25.306,
+                25.327,
+                28.629,
+                25.933,
+                25.902,
+                26.211000000000002,
+                25.900000000000002,
+                25.858,
+                25.486,
+                25.424,
+                25.14
+              ],
+              "interior_xy_observations": 0,
+              "coincident_xy_returns_combined": 0,
+              "road_fit": {
+                "status": "disabled",
+                "outlier_vertices": [],
+                "changed_vertices": 0
+              },
+              "triangles": 10
+            }
+          ],
+          "triangles": 10,
+          "area_m2": 57.50000000046566
+        }
+      ]
+    },
+    {
+      "id": "filter",
+      "title": "Outliers filtered",
+      "settings": {
+        "road_filter_outliers": true,
+        "road_flatten": false
+      },
+      "status": "complete",
+      "objects": [
+        {
+          "source_id": "road",
+          "source_class": "Road",
+          "coverage_complete": true,
+          "status": "resolved",
+          "method": "boundary_rank",
+          "sample_points": 12,
+          "water_level_z": null,
+          "components": [
+            {
+              "boundary_vertices": 12,
+              "boundary_support_counts": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "borrowed_boundary_indices": [],
+              "raw_boundary_z": [
+                25.0,
+                25.306,
+                25.327,
+                28.629,
+                25.933,
+                25.902,
+                26.211000000000002,
+                25.900000000000002,
+                25.858,
+                25.486,
+                25.424,
+                25.14
+              ],
+              "boundary_z": [
+                25.0,
+                25.306,
+                25.327,
+                25.624755286348428,
+                25.673085644372296,
+                25.902,
+                26.211000000000002,
+                25.900000000000002,
+                25.858,
+                25.486,
+                25.424,
+                25.14
+              ],
+              "interior_xy_observations": 0,
+              "coincident_xy_returns_combined": 0,
+              "road_fit": {
+                "status": "filtered",
+                "outlier_vertices": [
+                  3,
+                  4
+                ],
+                "changed_vertices": 2,
+                "fit_rms_m": 0.019120642429370987
+              },
+              "triangles": 10
+            }
+          ],
+          "triangles": 10,
+          "area_m2": 57.50000000046566
+        }
+      ]
+    },
+    {
+      "id": "smooth",
+      "title": "Smoothed road",
+      "settings": {
+        "road_filter_outliers": true,
+        "road_flatten": true
+      },
+      "status": "complete",
+      "objects": [
+        {
+          "source_id": "road",
+          "source_class": "Road",
+          "coverage_complete": true,
+          "status": "resolved",
+          "method": "boundary_rank",
+          "sample_points": 12,
+          "water_level_z": null,
+          "components": [
+            {
+              "boundary_vertices": 12,
+              "boundary_support_counts": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+              ],
+              "borrowed_boundary_indices": [],
+              "raw_boundary_z": [
+                25.0,
+                25.306,
+                25.327,
+                28.629,
+                25.933,
+                25.902,
+                26.211000000000002,
+                25.900000000000002,
+                25.858,
+                25.486,
+                25.424,
+                25.14
+              ],
+              "boundary_z": [
+                25.027339915438272,
+                25.280366036644356,
+                25.313763162504298,
+                25.624755286348428,
+                25.673085644372296,
+                25.913812767847443,
+                26.18079984032936,
+                25.92375136437441,
+                25.877527790749163,
+                25.4820191972335,
+                25.422417373250735,
+                25.132202551628357
+              ],
+              "interior_xy_observations": 0,
+              "coincident_xy_returns_combined": 0,
+              "road_fit": {
+                "status": "flattened",
+                "outlier_vertices": [
+                  3,
+                  4
+                ],
+                "changed_vertices": 12,
+                "fit_rms_m": 0.019120642429370987
+              },
+              "triangles": 10
+            }
+          ],
+          "triangles": 10,
+          "area_m2": 57.50000000046566
+        }
+      ]
+    }
+  ]
+}

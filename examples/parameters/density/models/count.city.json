@@ -1,0 +1,286 @@
+{
+  "type": "CityJSON",
+  "version": "2.0",
+  "transform": {
+    "scale": [
+      0.001,
+      0.001,
+      0.001
+    ],
+    "translate": [
+      500000.0,
+      3100000.0,
+      25.0
+    ]
+  },
+  "metadata": {
+    "identifier": "parameter-density-lod1",
+    "title": "parameter-density LoD1",
+    "referenceSystem": "https://www.opengis.net/def/crs/EPSG/0/25828",
+    "geographicalExtent": [
+      500000.0,
+      3100000.0,
+      25.0,
+      500002.0,
+      3100001.0,
+      27.0
+    ]
+  },
+  "CityObjects": {
+    "Building::example": {
+      "type": "Building",
+      "attributes": {
+        "sourceId": "example",
+        "sourceClass": "Building",
+        "reconstructionStatus": "parent",
+        "issues": []
+      },
+      "geometry": [],
+      "children": [
+        "BuildingPart::terrace"
+      ]
+    },
+    "BuildingPart::terrace": {
+      "type": "BuildingPart",
+      "attributes": {
+        "sourceId": "terrace",
+        "sourceClass": "BuildingPart",
+        "reconstructionStatus": "resolved",
+        "issues": [
+          "insufficient_point_quantity",
+          "no_positive_storeys_for_fallback",
+          "spatial_roof_surface",
+          "lod1_flat_surface_approximation"
+        ],
+        "building_surfaces": {
+          "selection_policy": "xyz_footprints_adjacent_surfaces",
+          "accepted": true,
+          "original_representatives": 8,
+          "retained_surface_representatives": 8,
+          "spacing_m": 0.5,
+          "planes": [
+            {
+              "local_coefficients": [
+                7.78205134420139e-15,
+                1.0658141036401503e-14,
+                26.999999999999993
+              ],
+              "xy_origin": [
+                500000.25,
+                3100000.25
+              ],
+              "slope_deg": 7.561225999242776e-13,
+              "cells": 8,
+              "rmse_m": 5.617333549722722e-15,
+              "fitted_upper_z": 27.00000000000001,
+              "observed_z_range": [
+                27.0,
+                27.0
+              ],
+              "raw_plane_inliers": 8
+            }
+          ],
+          "candidates": [
+            {
+              "roof_z": 27.00000000000001,
+              "visible_area_m2": 2.0,
+              "supported_area_m2": 2.0,
+              "coverage": 1.0,
+              "independent_points": 8,
+              "accepted": true
+            }
+          ],
+          "rejected_neighbour_planes": [],
+          "neighbour_ids": [],
+          "source_classes_used": false,
+          "independent_interior_support": false,
+          "inclined_continuous_roof": false,
+          "geometry_envelope_required": false,
+          "selection_basis": "spatial_support",
+          "context_floor_height_m": null,
+          "roof_z": 27.00000000000001
+        },
+        "roof_surface": {
+          "accepted": true,
+          "reason": "attributed_geometric_surfaces",
+          "roof_z": 27.00000000000001,
+          "planes": [
+            {
+              "local_coefficients": [
+                7.78205134420139e-15,
+                1.0658141036401503e-14,
+                26.999999999999993
+              ],
+              "xy_origin": [
+                500000.25,
+                3100000.25
+              ],
+              "slope_deg": 7.561225999242776e-13,
+              "cells": 8,
+              "rmse_m": 5.617333549722722e-15,
+              "fitted_upper_z": 27.00000000000001,
+              "observed_z_range": [
+                27.0,
+                27.0
+              ],
+              "raw_plane_inliers": 8
+            }
+          ],
+          "retained_cells": 8,
+          "storeys_used": false,
+          "applied_to_height": true
+        },
+        "height_m": 2.0000000000000107,
+        "ground_z": 25.0,
+        "reconstructed_top_z": 27.00000000000001,
+        "method": "roof_surface",
+        "n_points": 8,
+        "density_points_m2": 4.0,
+        "ground_method": null,
+        "ground_excluded_inside_buildings": null,
+        "ground_min_z": null,
+        "ground_max_z": null,
+        "ground_median_error_bound_m": null,
+        "reference_part_id": null,
+        "floor_height_m": null,
+        "roof_mode_z": 27.0,
+        "roof_strength": 1.0,
+        "inferred_roof_support_fraction": null,
+        "roof_reference_z": 27.00000000000001
+      },
+      "geometry": [
+        {
+          "type": "Solid",
+          "lod": "1",
+          "boundaries": [
+            [
+              [
+                [
+                  3,
+                  2,
+                  1,
+                  0
+                ]
+              ],
+              [
+                [
+                  4,
+                  5,
+                  6,
+                  7
+                ]
+              ],
+              [
+                [
+                  0,
+                  1,
+                  5,
+                  4
+                ]
+              ],
+              [
+                [
+                  1,
+                  2,
+                  6,
+                  5
+                ]
+              ],
+              [
+                [
+                  2,
+                  3,
+                  7,
+                  6
+                ]
+              ],
+              [
+                [
+                  3,
+                  0,
+                  4,
+                  7
+                ]
+              ]
+            ]
+          ],
+          "semantics": {
+            "surfaces": [
+              {
+                "type": "GroundSurface"
+              },
+              {
+                "type": "RoofSurface"
+              },
+              {
+                "type": "WallSurface"
+              }
+            ],
+            "values": [
+              [
+                0,
+                1,
+                2,
+                2,
+                2,
+                2
+              ]
+            ]
+          }
+        }
+      ],
+      "parents": [
+        "Building::example"
+      ]
+    }
+  },
+  "vertices": [
+    [
+      2000,
+      0,
+      0
+    ],
+    [
+      2000,
+      1000,
+      0
+    ],
+    [
+      0,
+      1000,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      2000,
+      0,
+      2000
+    ],
+    [
+      2000,
+      1000,
+      2000
+    ],
+    [
+      0,
+      1000,
+      2000
+    ],
+    [
+      0,
+      0,
+      2000
+    ]
+  ],
+  "lodext": {
+    "vertical_reference": "local_relative",
+    "z_unit": "m",
+    "clamping_applied": false,
+    "height_source": "lidar",
+    "input_contract": "0.2"
+  }
+}

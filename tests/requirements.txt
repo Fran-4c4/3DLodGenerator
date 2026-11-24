@@ -1,0 +1,9 @@
+# Direct dependencies for local fixture inspection and tests on Python 3.12.
+# This is not the runtime dependency set or a complete transitive lockfile.
+numpy==2.2.6
+laspy[lazrs]==2.7.0
+pyproj==3.7.2
+rasterio==1.5.0
+shapely==2.1.2
+pytest==9.0.3
+jsonschema==4.26.0

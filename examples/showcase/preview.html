@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3DLodExt · From a GIS map to 3D</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f4f6;color:#25323d;font:14px system-ui,sans-serif}
+header{padding:18px 24px;background:#fff;border-bottom:1px solid #dce3e7;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+h1{font-size:19px;margin:0 0 5px}p{margin:0;color:#546570;font-size:12px;max-width:780px;line-height:1.6}
+nav{display:flex;gap:7px;flex-wrap:wrap}button{background:#fff;border:1px solid #ccd6db;padding:9px 12px;border-radius:7px;cursor:pointer;color:#314b56;font:inherit;font-size:12px}button[aria-pressed=true]{background:#176c70;border-color:#176c70;color:white}
+#view{height:calc(100vh - 130px);min-height:420px}canvas{display:block;width:100%;height:100%}
+footer{padding:9px 24px;font-size:11px;color:#526570;display:flex;gap:18px;flex-wrap:wrap;background:#fff}i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px}
+body.capture header,body.capture footer{display:none}body.capture #view{height:100vh;min-height:0}
+@media(max-width:600px){header{padding:12px}#view{height:65vh}footer{padding:12px}}
+</style>
+</head>
+<body>
+<header><div><h1>From a GIS map to a 3D neighbourhood</h1><p id="caption">Loading original synthetic data…</p></div>
+<nav aria-label="Process stage"><button data-step="map">1 · Classified polygons</button><button data-step="points">2 · Elevation observations</button><button data-step="model">3 · Generated geometry</button></nav></header>
+<main id="view" aria-label="Interactive reconstruction example"></main>
+<footer><span><i style="background:#df8f77"></i>Buildings</span><span><i style="background:#b1b8bc"></i>Roads</span><span><i style="background:#81b8cf"></i>Water</span><span><i style="background:#b1c7a4"></i>Forest / land cover</span><span>Original synthetic data · visual composition of two runs · stitching pending</span></footer>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js"}}</script>
+<script type="module">
+// Display-only viewer. Three.js 0.128 is MIT, loaded externally; no browser
+// library is imported by the reconstruction engine. Query step selects a view;
+// step: map|points|model, default model; invalid values fail explicitly.
+// capture=1 hides interface chrome; other values leave it visible.
+// data: fetch URL relative to this HTML, default presentation.json. It supplies
+// only display geometry/observations (contract in tools/generate_showcase.py).
+// These options never change reconstruction settings or exaggerate heights.
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js';
+import {OrbitControls} from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js';
+const params=new URLSearchParams(location.search);
+if(params.get('capture')==='1')document.body.classList.add('capture');
+const container=document.querySelector('#view');
+const scene=new THREE.Scene();scene.background=new THREE.Color('#f2f4f6');
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.outputEncoding=THREE.sRGBEncoding;renderer.toneMapping=THREE.NoToneMapping;
+container.append(renderer.domElement);
+const camera=new THREE.OrthographicCamera(-110,110,80,-80,.1,1500);
+const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.maxPolarAngle=Math.PI/2-.01;
+scene.add(new THREE.HemisphereLight(0xffffff,0xc9c3b8,.55));
+const sun=new THREE.DirectionalLight(0xfffaf0,.8);sun.position.set(-60,180,90);sun.target.position.set(90,0,-60);
+sun.castShadow=true;sun.shadow.mapSize.set(4096,4096);Object.assign(sun.shadow.camera,{left:-150,right:150,top:150,bottom:-150,near:.5,far:600});
+sun.shadow.bias=-.00015;sun.shadow.normalBias=.015;scene.add(sun,sun.target);
+const modelGroup=new THREE.Group(),mapGroup=new THREE.Group(),pointGroup=new THREE.Group();scene.add(modelGroup,mapGroup,pointGroup);
+const colours={Building:0xdf8f77,BuildingPart:0xdf8f77,Road:0xb1b8bc,Water:0x81b8cf,Terrain:0xeee5d2,Forest:0xb1c7a4};
+const colour=kind=>new THREE.Color(colours[kind]||0xcccccc).convertSRGBToLinear();
+const captions={map:'Classified 2D polygons: footprints, road widths, water and land cover.',
+ points:'Actual synthetic observations: nominal roof grid 5 points/m²; ground uses a separate grid and boundary controls.',
+ model:'Actual LoD1 buildings and lifted surfaces from 3DLodExt. This presentation composes separate outputs; cross-object stitching is pending.'};
+function geometry(positions){
+ const p=[];for(let i=0;i<positions.length;i+=3)p.push(positions[i],positions[i+2],-positions[i+1]);
+ const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));g.computeVertexNormals();return g;
+}
+const dataset=await (await fetch(params.get('data')||'presentation.json')).json();
+for(const item of dataset.meshes){
+ const g=geometry(item.positions),material=new THREE.MeshStandardMaterial({color:colour(item.kind),roughness:.9,metalness:0,side:THREE.DoubleSide});
+ const mesh=new THREE.Mesh(g,material);mesh.name=item.id;mesh.castShadow=true;mesh.receiveShadow=true;modelGroup.add(mesh);
+ if(item.kind==='Building'||item.kind==='BuildingPart'){
+  const edges=new THREE.LineSegments(new THREE.EdgesGeometry(g,25),new THREE.LineBasicMaterial({color:0x774d40,transparent:true,opacity:.16}));modelGroup.add(edges);
+ }
+}
+for(const item of dataset.map){
+ for(const rings of item.polygons){
+  const vectors=rings.map(r=>r.slice(0,-1).map(([x,y])=>new THREE.Vector2(x,y)));
+  const indices=THREE.ShapeUtils.triangulateShape(vectors[0],vectors.slice(1));
+  const vertices=vectors.flat(),positions=[];
+  for(const tri of indices)for(const index of tri){const p=vertices[index];positions.push(p.x,.01,-p.y)}
+  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));
+  mapGroup.add(new THREE.Mesh(g,new THREE.MeshBasicMaterial({color:colour(item.kind),side:THREE.DoubleSide})));
+ }
+}
+const p=dataset.points,positions=[],rgb=[];
+for(let i=0;i<p.classes.length;i++){
+ positions.push(p.xyz[i*3],p.xyz[i*3+2]+.05,-p.xyz[i*3+1]);
+ const c=new THREE.Color(p.classes[i]===6?0xa24e3b:p.classes[i]===9?0x226a8c:p.classes[i]===11?0x4b5b64:0x5e7150);rgb.push(c.r,c.g,c.b);
+}
+const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.Float32BufferAttribute(positions,3));pg.setAttribute('color',new THREE.Float32BufferAttribute(rgb,3));
+pointGroup.add(new THREE.Points(pg,new THREE.PointsMaterial({size:1.7,sizeAttenuation:false,vertexColors:true})));
+const centre=new THREE.Vector3(90,3,-60);
+function fit(top){
+ camera.up.set(0,1,0);camera.position.copy(centre).add(new THREE.Vector3(-170,155,190));
+ if(top){camera.up.set(0,0,-1);camera.position.copy(centre).add(new THREE.Vector3(0,300,.01))}
+ camera.lookAt(centre);camera.updateMatrixWorld();
+ const inv=camera.matrixWorldInverse;let maxX=0,maxY=0;
+ for(const x of [0,180])for(const y of [0,22])for(const z of [0,-120]){const v=new THREE.Vector3(x,y,z).applyMatrix4(inv);maxX=Math.max(maxX,Math.abs(v.x));maxY=Math.max(maxY,Math.abs(v.y))}
+ const aspect=container.clientWidth/container.clientHeight,h=Math.max(maxY,maxX/aspect)*1.10;
+ camera.left=-h*aspect;camera.right=h*aspect;camera.top=h;camera.bottom=-h;camera.updateProjectionMatrix();controls.target.copy(centre);controls.update();
+}
+window.setShowcaseStep=function(step){
+ if(!captions[step])throw Error('Unknown showcase stage');
+ modelGroup.visible=step==='model';mapGroup.visible=step!=='model';pointGroup.visible=step==='points';
+ for(const button of document.querySelectorAll('button[data-step]'))button.setAttribute('aria-pressed',String(button.dataset.step===step));
+ document.querySelector('#caption').textContent=captions[step];fit(step==='map');window.showcaseStep=step;
+};
+for(const button of document.querySelectorAll('button[data-step]'))button.onclick=()=>window.setShowcaseStep(button.dataset.step);
+function resize(){renderer.setSize(container.clientWidth,container.clientHeight);fit(window.showcaseStep==='map')}
+window.addEventListener('resize',resize);window.setShowcaseStep(params.get('step')||'model');resize();
+renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera)});
+window.showcaseReady=true;
+</script>
+</body></html>

@@ -1,0 +1,31 @@
+{
+  "description": "Synthetic fixture, not surveyed data or an absolute vertical datum",
+  "base_z_m": 25,
+  "parts": {
+    "court": {
+      "height_m": 6.0,
+      "area_m2": 336.0,
+      "components": 1
+    },
+    "terrace": {
+      "height_m": 1.8,
+      "area_m2": 120.0,
+      "components": 1
+    },
+    "concave": {
+      "height_m": 8.0,
+      "area_m2": 150.0,
+      "components": 1
+    },
+    "multipart": {
+      "height_m": 5.0,
+      "area_m2": 72.0,
+      "components": 2
+    },
+    "sparse": {
+      "height_m": 4.0,
+      "area_m2": 6.0,
+      "components": 1
+    }
+  }
+}

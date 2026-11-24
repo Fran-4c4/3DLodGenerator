@@ -1,0 +1,113 @@
+{
+  "family": "water",
+  "title": "Water elevation percentile",
+  "input_sha256": {
+    "build.lidar.json": "d7a13f0deedb3325022dd038f0c0644ce4632cf607c9e4040edc179eba87bd62",
+    "cloud.las": "cb8b5374c046e255458d620597fe5a70b3cd3d195cfe158acef5807c81c7d834",
+    "dtm.tif": "802bee74ba0ae227693c74fe87a961a1108701471116e3302959d24565ef96e8",
+    "footprints.gpkg": "5d7ee99fae54f7c07c7a734552e3cb819075312647848f66691582b3e282a45d",
+    "truth.json": "0900666bb96965861dff43bd816324d9f793641c2ddf03e2c5d14b09027ab933"
+  },
+  "cases": [
+    {
+      "id": "low",
+      "title": "Percentile 10",
+      "settings": {
+        "lifting": {
+          "Water": {
+            "percentile": 10
+          }
+        }
+      },
+      "status": "complete",
+      "objects": [
+        {
+          "source_id": "pond",
+          "source_class": "Water",
+          "coverage_complete": true,
+          "status": "resolved",
+          "method": "flat_rank",
+          "sample_points": 289,
+          "water_level_z": 24.0,
+          "components": [
+            {
+              "boundary_vertices": 4,
+              "boundary_support_counts": [],
+              "borrowed_boundary_indices": [],
+              "raw_boundary_z": [
+                24.0,
+                24.0,
+                24.0,
+                24.0
+              ],
+              "boundary_z": [
+                24.0,
+                24.0,
+                24.0,
+                24.0
+              ],
+              "interior_xy_observations": 0,
+              "coincident_xy_returns_combined": 0,
+              "road_fit": {
+                "status": "not_applicable"
+              },
+              "triangles": 2
+            }
+          ],
+          "triangles": 2,
+          "area_m2": 64.0
+        }
+      ]
+    },
+    {
+      "id": "high",
+      "title": "Percentile 90",
+      "settings": {
+        "lifting": {
+          "Water": {
+            "percentile": 90
+          }
+        }
+      },
+      "status": "complete",
+      "objects": [
+        {
+          "source_id": "pond",
+          "source_class": "Water",
+          "coverage_complete": true,
+          "status": "resolved",
+          "method": "flat_rank",
+          "sample_points": 289,
+          "water_level_z": 25.0,
+          "components": [
+            {
+              "boundary_vertices": 4,
+              "boundary_support_counts": [],
+              "borrowed_boundary_indices": [],
+              "raw_boundary_z": [
+                25.0,
+                25.0,
+                25.0,
+                25.0
+              ],
+              "boundary_z": [
+                25.0,
+                25.0,
+                25.0,
+                25.0
+              ],
+              "interior_xy_observations": 0,
+              "coincident_xy_returns_combined": 0,
+              "road_fit": {
+                "status": "not_applicable"
+              },
+              "triangles": 2
+            }
+          ],
+          "triangles": 2,
+          "area_m2": 64.0
+        }
+      ]
+    }
+  ]
+}

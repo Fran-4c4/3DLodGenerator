@@ -1,0 +1,165 @@
+{
+  "area": "Las Canteras, Las Palmas de Gran Canaria, Spain",
+  "working_epsg": 4083,
+  "lidar_survey_year": 2023,
+  "cadastral_snapshot": "2026-08-21",
+  "imagery_acquisition_date": null,
+  "imagery_service": "https://www.ign.es/wms-inspire/pnoa-ma",
+  "imagery_layer": "OI.OrthoimageCoverage",
+  "imagery_display": "WMS raster reprojected from EPSG:3857 to EPSG:4083 for the figure; not used for numerical footprint/DTM checks.",
+  "cadastral_source": "https://www.catastro.hacienda.gob.es/INSPIRE/Buildings/35/35017-LAS%20PALMAS%20DE%20GRAN%20CANARIA/A.ES.SDGC.BU.35017.zip",
+  "families": {
+    "A": "ES.SDGC.BU.7426301DS5172N",
+    "B": "ES.SDGC.BU.7426322DS5172N"
+  },
+  "part_b2": {
+    "n_points": 214,
+    "roof_mode_z": 25.5,
+    "roof_reference_z": 25.749,
+    "ground_z": 5.32,
+    "height_m": 20.429,
+    "method": "roof_band",
+    "ground_method": "lidar_histogram_median",
+    "ground_samples": 568,
+    "ground_median_error_bound_m": 0.005
+  },
+  "dtm_support": {
+    "ES.SDGC.BU.7426301DS5172N_part1": {
+      "footprint_area_m2": 109.74830000343083,
+      "native_cells_with_centres_inside": 442,
+      "valid_ground_cells_inside": 89,
+      "valid_ground_cells_more_than_1m_inside": 3,
+      "maximum_valid_cell_depth_m": 1.1327822458310535,
+      "raw_class2_points_inside": 14,
+      "raw_class2_points_more_than_1m_inside": 0,
+      "maximum_class2_depth_m": 0.4043857497932647,
+      "raw_class6_points_inside": 808,
+      "maximum_distance_from_valid_inside_cell_to_raw_ground_m": 0.9991236160261109,
+      "valid_inside_cells_whose_nearest_ground_point_is_outside_footprint": 27
+    },
+    "ES.SDGC.BU.7426301DS5172N_part2": {
+      "footprint_area_m2": 15.909749996851081,
+      "native_cells_with_centres_inside": 64,
+      "valid_ground_cells_inside": 0,
+      "valid_ground_cells_more_than_1m_inside": 0,
+      "maximum_valid_cell_depth_m": null,
+      "raw_class2_points_inside": 0,
+      "raw_class2_points_more_than_1m_inside": 0,
+      "maximum_class2_depth_m": null,
+      "raw_class6_points_inside": 98,
+      "maximum_distance_from_valid_inside_cell_to_raw_ground_m": null,
+      "valid_inside_cells_whose_nearest_ground_point_is_outside_footprint": 0
+    },
+    "ES.SDGC.BU.7426301DS5172N_part3": {
+      "footprint_area_m2": 18.81029999706922,
+      "native_cells_with_centres_inside": 71,
+      "valid_ground_cells_inside": 0,
+      "valid_ground_cells_more_than_1m_inside": 0,
+      "maximum_valid_cell_depth_m": null,
+      "raw_class2_points_inside": 0,
+      "raw_class2_points_more_than_1m_inside": 0,
+      "maximum_class2_depth_m": null,
+      "raw_class6_points_inside": 116,
+      "maximum_distance_from_valid_inside_cell_to_raw_ground_m": null,
+      "valid_inside_cells_whose_nearest_ground_point_is_outside_footprint": 0
+    },
+    "ES.SDGC.BU.7426301DS5172N_part4": {
+      "footprint_area_m2": 13.321499995296996,
+      "native_cells_with_centres_inside": 52,
+      "valid_ground_cells_inside": 0,
+      "valid_ground_cells_more_than_1m_inside": 0,
+      "maximum_valid_cell_depth_m": null,
+      "raw_class2_points_inside": 0,
+      "raw_class2_points_more_than_1m_inside": 0,
+      "maximum_class2_depth_m": null,
+      "raw_class6_points_inside": 92,
+      "maximum_distance_from_valid_inside_cell_to_raw_ground_m": null,
+      "valid_inside_cells_whose_nearest_ground_point_is_outside_footprint": 0
+    },
+    "ES.SDGC.BU.7426301DS5172N_part5": {
+      "footprint_area_m2": 7.045349998774507,
+      "native_cells_with_centres_inside": 27,
+      "valid_ground_cells_inside": 0,
+      "valid_ground_cells_more_than_1m_inside": 0,
+      "maximum_valid_cell_depth_m": null,
+      "raw_class2_points_inside": 0,
+      "raw_class2_points_more_than_1m_inside": 0,
+      "maximum_class2_depth_m": null,
+      "raw_class6_points_inside": 61,
+      "maximum_distance_from_valid_inside_cell_to_raw_ground_m": null,
+      "valid_inside_cells_whose_nearest_ground_point_is_outside_footprint": 0
+    },
+    "ES.SDGC.BU.7426322DS5172N_part1": {
+      "footprint_area_m2": 51.852549994885386,
+      "native_cells_with_centres_inside": 199,
+      "valid_ground_cells_inside": 8,
+      "valid_ground_cells_more_than_1m_inside": 0,
+      "maximum_valid_cell_depth_m": 0.9536677249653674,
+      "raw_class2_points_inside": 2,
+      "raw_class2_points_more_than_1m_inside": 0,
+      "maximum_class2_depth_m": 0.05744607393773458,
+      "raw_class6_points_inside": 380,
+      "maximum_distance_from_valid_inside_cell_to_raw_ground_m": 0.9782944343253779,
+      "valid_inside_cells_whose_nearest_ground_point_is_outside_footprint": 3
+    },
+    "ES.SDGC.BU.7426322DS5172N_part2": {
+      "footprint_area_m2": 27.857800002325664,
+      "native_cells_with_centres_inside": 107,
+      "valid_ground_cells_inside": 17,
+      "valid_ground_cells_more_than_1m_inside": 0,
+      "maximum_valid_cell_depth_m": 0.5460085084837459,
+      "raw_class2_points_inside": 0,
+      "raw_class2_points_more_than_1m_inside": 0,
+      "maximum_class2_depth_m": null,
+      "raw_class6_points_inside": 214,
+      "maximum_distance_from_valid_inside_cell_to_raw_ground_m": 0.9573097724315068,
+      "valid_inside_cells_whose_nearest_ground_point_is_outside_footprint": 17
+    },
+    "ES.SDGC.BU.7426322DS5172N_part3": {
+      "footprint_area_m2": 25.423149999371695,
+      "native_cells_with_centres_inside": 103,
+      "valid_ground_cells_inside": 8,
+      "valid_ground_cells_more_than_1m_inside": 0,
+      "maximum_valid_cell_depth_m": 0.7157782720290319,
+      "raw_class2_points_inside": 1,
+      "raw_class2_points_more_than_1m_inside": 0,
+      "maximum_class2_depth_m": 0.1211716711168198,
+      "raw_class6_points_inside": 146,
+      "maximum_distance_from_valid_inside_cell_to_raw_ground_m": 0.9296504719309027,
+      "valid_inside_cells_whose_nearest_ground_point_is_outside_footprint": 2
+    }
+  },
+  "modifications": "Analytical rendered figures with selected footprints, class-filtered point plots, histogram and generated DTM; no source coordinates adjusted. Figure labels A/B are editorial labels only.",
+  "limits": "Contextual height attribution, not surveyed roof truth. Imagery date not established. Ground and roof share the original survey Z; no geoid conversion. Full municipal source datasets are not included.",
+  "source_terms": {
+    "pnoa": "https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN_eng.pdf",
+    "catastro": "https://www.catastro.hacienda.gob.es/webinspire/documentos/Licencia.pdf"
+  },
+  "figures": {
+    "las-canteras-overview.png": {
+      "sha256": "a831e8b1930331bc558b601433c8afd00d6dacf857688f83c5d939db2c1a6a5f",
+      "bytes": 635873
+    },
+    "promenade-extent.png": {
+      "sha256": "3eb24e6b2fc6d2d54d687cf20b92986a4c477e29f89a480c522927e86c3e401e",
+      "bytes": 463446
+    },
+    "promenade-model.png": {
+      "sha256": "78f39a4365c210c886f53d4e2a6971693ec7218d86d138d77966a1459786443b",
+      "bytes": 331117
+    },
+    "coast-evidence.png": {
+      "sha256": "3586602bfdc803dc266b79f5424ba1b26dba454411d230c6854c8c405fc234d6",
+      "bytes": 1705190
+    },
+    "dtm-footprint-support.png": {
+      "sha256": "013ee8bc66a4a21aa5c7a68e3b8d57f2477b87396095bbf51fb8e145d0207221",
+      "bytes": 1312317
+    },
+    "part2-point-ownership.png": {
+      "sha256": "a3548dad34b51fd5f848309b53a1b5e9b4cdf383e3799435a0190916f4ed05c1",
+      "bytes": 239766
+    }
+  },
+  "ground_workflow": "Direct streaming point statistics; no full point-cloud cache. DTM panels illustrate the optional raster workflow."
+}

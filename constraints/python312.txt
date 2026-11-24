@@ -1,0 +1,24 @@
+# Tested complete Python 3.12 geospatial + test environment; apply with pip -c.
+affine==3.0.1
+attrs==26.1.0
+certifi==2026.10.23
+click==8.5.1
+cligj==0.7.2
+colorama==0.4.6
+iniconfig==2.3.1
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+laspy==2.7.0
+lazrs==0.8.2
+numpy==2.2.6
+packaging==26.3
+pluggy==1.7.0
+Pygments==2.21.0
+pyparsing==3.3.3
+pyproj==3.7.2
+pytest==9.0.3
+rasterio==1.5.0
+referencing==0.37.0
+rpds-py==2026.9.1
+shapely==2.1.2
+typing_extensions==4.16.0

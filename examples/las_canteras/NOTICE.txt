@@ -1,0 +1,29 @@
+Las Canteras analytical documentation figures
+
+Work derived from PNOA LiDAR 2023 CC BY 4.0 scne.es (IGN and participating
+administrations). DTM generated from ground-classified returns, 0.5 m cells,
+1 m IDW interpolation radius; no vertical transformation.
+Work derived from PNOA maximum-actuality WMS imagery, CC BY 4.0 scne.es.
+Imagery acquisition date is not established; it is not labelled as a 2023 image.
+
+Building outlines derive from Direccion General del Catastro INSPIRE Buildings,
+municipality 35017, snapshot 2026-08-21. These are transformed analytical figures,
+not an official cadastral product or a redistribution of the original dataset.
+The separate promenade.zip contains a small selection of cadastral features
+and original LiDAR returns. Its README gives the source tiles, selection coordinates and reuse
+terms. The full municipal archive, full tiles and DTM are not bundled.
+The project MIT licence does not replace source-data terms.
+
+Modifications: selected and labelled building parts A/B; rendered point-class
+and elevation plots; histogram; derived ground raster; WMS image reprojected to
+EPSG:4083 for the context panel. Source coordinates were not shifted or repaired.
+See sources.json for source URLs, acquisition information and figure hashes.
+
+las-canteras-overview.png is a project screenshot of the wider reconstruction.
+promenade-extent.png plots the selected cadastral buildings and LiDAR crop in
+EPSG:4083. promenade-model.png renders the LoD1 CityJSON produced by building
+the downloadable promenade.zip example, using colour to distinguish buildings.
+
+IGN terms: https://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN_eng.pdf
+CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+Catastro terms: https://www.catastro.hacienda.gob.es/webinspire/documentos/Licencia.pdf

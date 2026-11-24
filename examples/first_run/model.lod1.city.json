@@ -1,0 +1,1513 @@
+{
+  "type": "CityJSON",
+  "version": "2.0",
+  "transform": {
+    "scale": [
+      0.001,
+      0.001,
+      0.001
+    ],
+    "translate": [
+      500000.0,
+      3100000.0,
+      24.99999999999998
+    ]
+  },
+  "metadata": {
+    "identifier": "synthetic-first-run-lod1",
+    "title": "synthetic-first-run LoD1",
+    "referenceSystem": "https://www.opengis.net/def/crs/EPSG/0/25828",
+    "geographicalExtent": [
+      500000.0,
+      3100000.0,
+      24.99999999999998,
+      500103.0,
+      3100020.0,
+      32.99999999999998
+    ]
+  },
+  "CityObjects": {
+    "Building::b-concave": {
+      "type": "Building",
+      "attributes": {
+        "sourceId": "b-concave",
+        "sourceClass": "Building",
+        "reconstructionStatus": "parent",
+        "issues": []
+      },
+      "geometry": [],
+      "children": [
+        "BuildingPart::concave"
+      ]
+    },
+    "Building::b-court": {
+      "type": "Building",
+      "attributes": {
+        "sourceId": "b-court",
+        "sourceClass": "Building",
+        "reconstructionStatus": "parent",
+        "issues": []
+      },
+      "geometry": [],
+      "children": [
+        "BuildingPart::court",
+        "BuildingPart::terrace"
+      ]
+    },
+    "Building::b-multi": {
+      "type": "Building",
+      "attributes": {
+        "sourceId": "b-multi",
+        "sourceClass": "Building",
+        "reconstructionStatus": "parent",
+        "issues": []
+      },
+      "geometry": [],
+      "children": [
+        "BuildingPart::multipart"
+      ]
+    },
+    "Building::b-sparse": {
+      "type": "Building",
+      "attributes": {
+        "sourceId": "b-sparse",
+        "sourceClass": "Building",
+        "reconstructionStatus": "parent",
+        "issues": []
+      },
+      "geometry": [],
+      "children": [
+        "BuildingPart::sparse"
+      ]
+    },
+    "BuildingPart::court": {
+      "type": "BuildingPart",
+      "attributes": {
+        "sourceId": "court",
+        "sourceClass": "BuildingPart",
+        "reconstructionStatus": "resolved",
+        "issues": [],
+        "building_surfaces": {
+          "selection_policy": "xyz_footprints_adjacent_surfaces",
+          "accepted": true,
+          "original_representatives": 855,
+          "retained_surface_representatives": 855,
+          "spacing_m": 0.625,
+          "planes": [
+            {
+              "local_coefficients": [
+                7.324779014812992e-15,
+                -2.220446049250313e-15,
+                31.00000000000001
+              ],
+              "xy_origin": [
+                500000.224,
+                3100000.224
+              ],
+              "slope_deg": 4.3853834916622045e-13,
+              "cells": 855,
+              "rmse_m": 7.749077546569233e-14,
+              "fitted_upper_z": 31.000000000000156,
+              "observed_z_range": [
+                31.0,
+                31.0
+              ],
+              "raw_plane_inliers": 855
+            }
+          ],
+          "candidates": [
+            {
+              "roof_z": 31.000000000000156,
+              "visible_area_m2": 336.0,
+              "supported_area_m2": 336.0,
+              "coverage": 1.0,
+              "independent_points": 855,
+              "accepted": true
+            }
+          ],
+          "rejected_neighbour_planes": [],
+          "neighbour_ids": [
+            "BuildingPart::terrace"
+          ],
+          "source_classes_used": false,
+          "roof_z": 31.000000000000156
+        },
+        "ground_plane": {
+          "local_coefficients": [
+            -6.543613654128037e-16,
+            -4.440892098500626e-16,
+            24.999999999999993
+          ],
+          "xy_origin": [
+            499997.0,
+            3099997.0
+          ],
+          "slope_deg": 4.5310929117988753e-14,
+          "cells": 64,
+          "rmse_m": 1.936249325903784e-14,
+          "fitted_upper_z": 24.999999999999993,
+          "observed_z_range": [
+            25.0,
+            25.0
+          ]
+        },
+        "roof_surface": {
+          "accepted": true,
+          "reason": "attributed_geometric_surfaces",
+          "roof_z": 31.000000000000156,
+          "planes": [
+            {
+              "local_coefficients": [
+                7.324779014812992e-15,
+                -2.220446049250313e-15,
+                31.00000000000001
+              ],
+              "xy_origin": [
+                500000.224,
+                3100000.224
+              ],
+              "slope_deg": 4.3853834916622045e-13,
+              "cells": 855,
+              "rmse_m": 7.749077546569233e-14,
+              "fitted_upper_z": 31.000000000000156,
+              "observed_z_range": [
+                31.0,
+                31.0
+              ],
+              "raw_plane_inliers": 855
+            }
+          ],
+          "retained_cells": 855,
+          "storeys_used": false
+        },
+        "height_m": 6.000000000000018,
+        "ground_z": 24.999999999999982,
+        "reconstructed_top_z": 31.0,
+        "method": "direct",
+        "n_points": 855,
+        "density_points_m2": 2.544642857142857,
+        "ground_method": "geometric_exterior_plane",
+        "ground_excluded_inside_buildings": null,
+        "ground_min_z": 25.0,
+        "ground_max_z": 25.0,
+        "ground_median_error_bound_m": null,
+        "reference_part_id": null,
+        "floor_height_m": 3.000000000000009,
+        "roof_mode_z": 31.0,
+        "roof_strength": 1.0,
+        "inferred_roof_support_fraction": null,
+        "roof_reference_z": 31.0,
+        "storeys_above": 2,
+        "storeys_below": 0,
+        "reference_height_m": 6.0,
+        "reference_height_method": "synthetic_truth",
+        "reference_height_source": "3DLodExt synthetic tutorial"
+      },
+      "geometry": [
+        {
+          "type": "Solid",
+          "lod": "1",
+          "boundaries": [
+            [
+              [
+                [
+                  3,
+                  2,
+                  1,
+                  0
+                ],
+                [
+                  7,
+                  6,
+                  5,
+                  4
+                ]
+              ],
+              [
+                [
+                  8,
+                  9,
+                  10,
+                  11
+                ],
+                [
+                  12,
+                  13,
+                  14,
+                  15
+                ]
+              ],
+              [
+                [
+                  0,
+                  1,
+                  9,
+                  8
+                ]
+              ],
+              [
+                [
+                  1,
+                  2,
+                  10,
+                  9
+                ]
+              ],
+              [
+                [
+                  2,
+                  3,
+                  11,
+                  10
+                ]
+              ],
+              [
+                [
+                  3,
+                  0,
+                  8,
+                  11
+                ]
+              ],
+              [
+                [
+                  4,
+                  5,
+                  13,
+                  12
+                ]
+              ],
+              [
+                [
+                  5,
+                  6,
+                  14,
+                  13
+                ]
+              ],
+              [
+                [
+                  6,
+                  7,
+                  15,
+                  14
+                ]
+              ],
+              [
+                [
+                  7,
+                  4,
+                  12,
+                  15
+                ]
+              ]
+            ]
+          ],
+          "semantics": {
+            "surfaces": [
+              {
+                "type": "GroundSurface"
+              },
+              {
+                "type": "RoofSurface"
+              },
+              {
+                "type": "WallSurface"
+              }
+            ],
+            "values": [
+              [
+                0,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ]
+            ]
+          }
+        }
+      ],
+      "parents": [
+        "Building::b-court"
+      ]
+    },
+    "BuildingPart::terrace": {
+      "type": "BuildingPart",
+      "attributes": {
+        "sourceId": "terrace",
+        "sourceClass": "BuildingPart",
+        "reconstructionStatus": "resolved",
+        "issues": [
+          "below_reference_floor_range"
+        ],
+        "building_surfaces": {
+          "selection_policy": "xyz_footprints_adjacent_surfaces",
+          "accepted": true,
+          "original_representatives": 384,
+          "retained_surface_representatives": 384,
+          "spacing_m": 0.625,
+          "planes": [
+            {
+              "local_coefficients": [
+                3.3829289420547184e-14,
+                -7.105427357601002e-15,
+                26.80000000000001
+              ],
+              "xy_origin": [
+                500020.224,
+                3100000.224
+              ],
+              "slope_deg": 1.9805684309142903e-12,
+              "cells": 384,
+              "rmse_m": 7.911334293048588e-14,
+              "fitted_upper_z": 26.800000000000193,
+              "observed_z_range": [
+                26.8,
+                26.8
+              ],
+              "raw_plane_inliers": 384
+            }
+          ],
+          "candidates": [
+            {
+              "roof_z": 26.800000000000193,
+              "visible_area_m2": 120.0,
+              "supported_area_m2": 120.0,
+              "coverage": 1.0,
+              "independent_points": 384,
+              "accepted": true
+            }
+          ],
+          "rejected_neighbour_planes": [],
+          "neighbour_ids": [
+            "BuildingPart::court"
+          ],
+          "source_classes_used": false,
+          "roof_z": 26.800000000000193
+        },
+        "ground_plane": {
+          "local_coefficients": [
+            -2.453584254512812e-16,
+            2.220446049250313e-16,
+            24.999999999999993
+          ],
+          "xy_origin": [
+            500017.0,
+            3099995.0
+          ],
+          "slope_deg": 1.8960017839295243e-14,
+          "cells": 64,
+          "rmse_m": 6.4047456679787536e-15,
+          "fitted_upper_z": 25.0,
+          "observed_z_range": [
+            25.0,
+            25.0
+          ]
+        },
+        "roof_surface": {
+          "accepted": true,
+          "reason": "attributed_geometric_surfaces",
+          "roof_z": 26.800000000000193,
+          "planes": [
+            {
+              "local_coefficients": [
+                3.3829289420547184e-14,
+                -7.105427357601002e-15,
+                26.80000000000001
+              ],
+              "xy_origin": [
+                500020.224,
+                3100000.224
+              ],
+              "slope_deg": 1.9805684309142903e-12,
+              "cells": 384,
+              "rmse_m": 7.911334293048588e-14,
+              "fitted_upper_z": 26.800000000000193,
+              "observed_z_range": [
+                26.8,
+                26.8
+              ],
+              "raw_plane_inliers": 384
+            }
+          ],
+          "retained_cells": 384,
+          "storeys_used": false
+        },
+        "height_m": 2.0000000000000036,
+        "ground_z": 24.999999999999996,
+        "reconstructed_top_z": 27.0,
+        "method": "direct",
+        "n_points": 384,
+        "density_points_m2": 3.2,
+        "ground_method": "geometric_exterior_plane",
+        "ground_excluded_inside_buildings": null,
+        "ground_min_z": 25.0,
+        "ground_max_z": 25.0,
+        "ground_median_error_bound_m": null,
+        "reference_part_id": null,
+        "floor_height_m": 2.0000000000000036,
+        "roof_mode_z": 27.0,
+        "roof_strength": 1.0,
+        "inferred_roof_support_fraction": null,
+        "roof_reference_z": 27.0,
+        "storeys_above": 1,
+        "storeys_below": 0,
+        "reference_height_m": 1.8,
+        "reference_height_method": "synthetic_truth",
+        "reference_height_source": "3DLodExt synthetic tutorial"
+      },
+      "geometry": [
+        {
+          "type": "Solid",
+          "lod": "1",
+          "boundaries": [
+            [
+              [
+                [
+                  1,
+                  2,
+                  17,
+                  16
+                ]
+              ],
+              [
+                [
+                  18,
+                  19,
+                  20,
+                  21
+                ]
+              ],
+              [
+                [
+                  16,
+                  17,
+                  19,
+                  18
+                ]
+              ],
+              [
+                [
+                  17,
+                  2,
+                  20,
+                  19
+                ]
+              ],
+              [
+                [
+                  2,
+                  1,
+                  21,
+                  20
+                ]
+              ],
+              [
+                [
+                  1,
+                  16,
+                  18,
+                  21
+                ]
+              ]
+            ]
+          ],
+          "semantics": {
+            "surfaces": [
+              {
+                "type": "GroundSurface"
+              },
+              {
+                "type": "RoofSurface"
+              },
+              {
+                "type": "WallSurface"
+              }
+            ],
+            "values": [
+              [
+                0,
+                1,
+                2,
+                2,
+                2,
+                2
+              ]
+            ]
+          }
+        }
+      ],
+      "parents": [
+        "Building::b-court"
+      ]
+    },
+    "BuildingPart::concave": {
+      "type": "BuildingPart",
+      "attributes": {
+        "sourceId": "concave",
+        "sourceClass": "BuildingPart",
+        "reconstructionStatus": "resolved",
+        "issues": [],
+        "building_surfaces": {
+          "selection_policy": "xyz_footprints_adjacent_surfaces",
+          "accepted": true,
+          "original_representatives": 495,
+          "retained_surface_representatives": 480,
+          "spacing_m": 0.625,
+          "planes": [
+            {
+              "local_coefficients": [
+                1.7095263933845973e-15,
+                -3.552713678800501e-15,
+                33.00000000000003
+              ],
+              "xy_origin": [
+                500040.224,
+                3100000.224
+              ],
+              "slope_deg": 2.25895504453433e-13,
+              "cells": 480,
+              "rmse_m": 2.7713443981634205e-14,
+              "fitted_upper_z": 33.00000000000005,
+              "observed_z_range": [
+                33.0,
+                33.0
+              ],
+              "raw_plane_inliers": 480
+            }
+          ],
+          "candidates": [
+            {
+              "roof_z": 33.00000000000005,
+              "visible_area_m2": 150.0,
+              "supported_area_m2": 150.0,
+              "coverage": 1.0,
+              "independent_points": 480,
+              "accepted": true
+            }
+          ],
+          "rejected_neighbour_planes": [],
+          "neighbour_ids": [],
+          "source_classes_used": false,
+          "roof_z": 33.00000000000005
+        },
+        "ground_plane": {
+          "local_coefficients": [
+            6.375160559862412e-16,
+            -4.440892098500626e-16,
+            24.999999999999982
+          ],
+          "xy_origin": [
+            500037.0,
+            3099997.0
+          ],
+          "slope_deg": 4.4515610967939807e-14,
+          "cells": 64,
+          "rmse_m": 1.8976696320313288e-14,
+          "fitted_upper_z": 24.999999999999993,
+          "observed_z_range": [
+            25.0,
+            25.0
+          ]
+        },
+        "roof_surface": {
+          "accepted": true,
+          "reason": "attributed_geometric_surfaces",
+          "roof_z": 33.00000000000005,
+          "planes": [
+            {
+              "local_coefficients": [
+                1.7095263933845973e-15,
+                -3.552713678800501e-15,
+                33.00000000000003
+              ],
+              "xy_origin": [
+                500040.224,
+                3100000.224
+              ],
+              "slope_deg": 2.25895504453433e-13,
+              "cells": 480,
+              "rmse_m": 2.7713443981634205e-14,
+              "fitted_upper_z": 33.00000000000005,
+              "observed_z_range": [
+                33.0,
+                33.0
+              ],
+              "raw_plane_inliers": 480
+            }
+          ],
+          "retained_cells": 480,
+          "storeys_used": false
+        },
+        "height_m": 8.000000000000021,
+        "ground_z": 24.99999999999998,
+        "reconstructed_top_z": 33.0,
+        "method": "direct",
+        "n_points": 480,
+        "density_points_m2": 3.2,
+        "ground_method": "geometric_exterior_plane",
+        "ground_excluded_inside_buildings": null,
+        "ground_min_z": 25.0,
+        "ground_max_z": 25.0,
+        "ground_median_error_bound_m": null,
+        "reference_part_id": null,
+        "floor_height_m": 4.000000000000011,
+        "roof_mode_z": 33.0,
+        "roof_strength": 1.0,
+        "inferred_roof_support_fraction": null,
+        "roof_reference_z": 33.0,
+        "storeys_above": 2,
+        "storeys_below": 0,
+        "reference_height_m": 8.0,
+        "reference_height_method": "synthetic_truth",
+        "reference_height_source": "3DLodExt synthetic tutorial"
+      },
+      "geometry": [
+        {
+          "type": "Solid",
+          "lod": "1",
+          "boundaries": [
+            [
+              [
+                [
+                  27,
+                  26,
+                  25,
+                  24,
+                  23,
+                  22
+                ]
+              ],
+              [
+                [
+                  28,
+                  29,
+                  30,
+                  31,
+                  32,
+                  33
+                ]
+              ],
+              [
+                [
+                  22,
+                  23,
+                  29,
+                  28
+                ]
+              ],
+              [
+                [
+                  23,
+                  24,
+                  30,
+                  29
+                ]
+              ],
+              [
+                [
+                  24,
+                  25,
+                  31,
+                  30
+                ]
+              ],
+              [
+                [
+                  25,
+                  26,
+                  32,
+                  31
+                ]
+              ],
+              [
+                [
+                  26,
+                  27,
+                  33,
+                  32
+                ]
+              ],
+              [
+                [
+                  27,
+                  22,
+                  28,
+                  33
+                ]
+              ]
+            ]
+          ],
+          "semantics": {
+            "surfaces": [
+              {
+                "type": "GroundSurface"
+              },
+              {
+                "type": "RoofSurface"
+              },
+              {
+                "type": "WallSurface"
+              }
+            ],
+            "values": [
+              [
+                0,
+                1,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ]
+            ]
+          }
+        }
+      ],
+      "parents": [
+        "Building::b-concave"
+      ]
+    },
+    "BuildingPart::multipart": {
+      "type": "BuildingPart",
+      "attributes": {
+        "sourceId": "multipart",
+        "sourceClass": "BuildingPart",
+        "reconstructionStatus": "resolved",
+        "issues": [],
+        "building_surfaces": {
+          "selection_policy": "xyz_footprints_adjacent_surfaces",
+          "accepted": true,
+          "original_representatives": 288,
+          "retained_surface_representatives": 288,
+          "spacing_m": 0.5,
+          "planes": [
+            {
+              "local_coefficients": [
+                6.687230332600356e-15,
+                -1.7763568394002505e-15,
+                30.000000000000014
+              ],
+              "xy_origin": [
+                500070.224,
+                3100000.224
+              ],
+              "slope_deg": 3.964374983406492e-13,
+              "cells": 288,
+              "rmse_m": 7.084765672274391e-14,
+              "fitted_upper_z": 30.000000000000117,
+              "observed_z_range": [
+                30.0,
+                30.0
+              ],
+              "raw_plane_inliers": 288
+            }
+          ],
+          "candidates": [
+            {
+              "roof_z": 30.000000000000117,
+              "visible_area_m2": 72.0,
+              "supported_area_m2": 72.0,
+              "coverage": 1.0,
+              "independent_points": 288,
+              "accepted": true
+            }
+          ],
+          "rejected_neighbour_planes": [],
+          "neighbour_ids": [],
+          "source_classes_used": false,
+          "roof_z": 30.000000000000117
+        },
+        "ground_plane": {
+          "local_coefficients": [
+            1.1401058453964644e-15,
+            1.7763568394002505e-15,
+            24.999999999999986
+          ],
+          "xy_origin": [
+            500067.0,
+            3099997.0
+          ],
+          "slope_deg": 1.2093732987154098e-13,
+          "cells": 64,
+          "rmse_m": 1.3895096493110173e-14,
+          "fitted_upper_z": 25.00000000000003,
+          "observed_z_range": [
+            25.0,
+            25.0
+          ]
+        },
+        "roof_surface": {
+          "accepted": true,
+          "reason": "attributed_geometric_surfaces",
+          "roof_z": 30.000000000000117,
+          "planes": [
+            {
+              "local_coefficients": [
+                6.687230332600356e-15,
+                -1.7763568394002505e-15,
+                30.000000000000014
+              ],
+              "xy_origin": [
+                500070.224,
+                3100000.224
+              ],
+              "slope_deg": 3.964374983406492e-13,
+              "cells": 288,
+              "rmse_m": 7.084765672274391e-14,
+              "fitted_upper_z": 30.000000000000117,
+              "observed_z_range": [
+                30.0,
+                30.0
+              ],
+              "raw_plane_inliers": 288
+            }
+          ],
+          "retained_cells": 288,
+          "storeys_used": false
+        },
+        "height_m": 4.9999999999999964,
+        "ground_z": 25.000000000000004,
+        "reconstructed_top_z": 30.0,
+        "method": "direct",
+        "n_points": 288,
+        "density_points_m2": 4.0,
+        "ground_method": "geometric_exterior_plane",
+        "ground_excluded_inside_buildings": null,
+        "ground_min_z": 25.0,
+        "ground_max_z": 25.0,
+        "ground_median_error_bound_m": null,
+        "reference_part_id": null,
+        "floor_height_m": 4.9999999999999964,
+        "roof_mode_z": 30.0,
+        "roof_strength": 1.0,
+        "inferred_roof_support_fraction": null,
+        "roof_reference_z": 30.0,
+        "storeys_above": 1,
+        "storeys_below": 0,
+        "reference_height_m": 5.0,
+        "reference_height_method": "synthetic_truth",
+        "reference_height_source": "3DLodExt synthetic tutorial"
+      },
+      "geometry": [
+        {
+          "type": "Solid",
+          "lod": "1",
+          "boundaries": [
+            [
+              [
+                [
+                  37,
+                  36,
+                  35,
+                  34
+                ]
+              ],
+              [
+                [
+                  38,
+                  39,
+                  40,
+                  41
+                ]
+              ],
+              [
+                [
+                  34,
+                  35,
+                  39,
+                  38
+                ]
+              ],
+              [
+                [
+                  35,
+                  36,
+                  40,
+                  39
+                ]
+              ],
+              [
+                [
+                  36,
+                  37,
+                  41,
+                  40
+                ]
+              ],
+              [
+                [
+                  37,
+                  34,
+                  38,
+                  41
+                ]
+              ]
+            ]
+          ],
+          "semantics": {
+            "surfaces": [
+              {
+                "type": "GroundSurface"
+              },
+              {
+                "type": "RoofSurface"
+              },
+              {
+                "type": "WallSurface"
+              }
+            ],
+            "values": [
+              [
+                0,
+                1,
+                2,
+                2,
+                2,
+                2
+              ]
+            ]
+          }
+        },
+        {
+          "type": "Solid",
+          "lod": "1",
+          "boundaries": [
+            [
+              [
+                [
+                  45,
+                  44,
+                  43,
+                  42
+                ]
+              ],
+              [
+                [
+                  46,
+                  47,
+                  48,
+                  49
+                ]
+              ],
+              [
+                [
+                  42,
+                  43,
+                  47,
+                  46
+                ]
+              ],
+              [
+                [
+                  43,
+                  44,
+                  48,
+                  47
+                ]
+              ],
+              [
+                [
+                  44,
+                  45,
+                  49,
+                  48
+                ]
+              ],
+              [
+                [
+                  45,
+                  42,
+                  46,
+                  49
+                ]
+              ]
+            ]
+          ],
+          "semantics": {
+            "surfaces": [
+              {
+                "type": "GroundSurface"
+              },
+              {
+                "type": "RoofSurface"
+              },
+              {
+                "type": "WallSurface"
+              }
+            ],
+            "values": [
+              [
+                0,
+                1,
+                2,
+                2,
+                2,
+                2
+              ]
+            ]
+          }
+        }
+      ],
+      "parents": [
+        "Building::b-multi"
+      ]
+    },
+    "BuildingPart::sparse": {
+      "type": "BuildingPart",
+      "attributes": {
+        "sourceId": "sparse",
+        "sourceClass": "BuildingPart",
+        "reconstructionStatus": "resolved",
+        "issues": [
+          "no_roof_points",
+          "no_floor_reference",
+          "explicit_external_height_fallback"
+        ],
+        "building_surfaces": {
+          "selection_policy": "xyz_footprints_adjacent_surfaces",
+          "accepted": false,
+          "original_representatives": 3,
+          "retained_surface_representatives": 0,
+          "spacing_m": 0.7071067811865476,
+          "planes": [],
+          "candidates": [],
+          "rejected_neighbour_planes": [],
+          "neighbour_ids": [],
+          "source_classes_used": false,
+          "roof_z": null
+        },
+        "ground_plane": {
+          "local_coefficients": [
+            -1.3302059099028278e-15,
+            4.440892098500626e-16,
+            24.999999999999996
+          ],
+          "xy_origin": [
+            500093.0,
+            3099993.0
+          ],
+          "slope_deg": 8.035031890896377e-14,
+          "cells": 64,
+          "rmse_m": 1.2362920382602608e-14,
+          "fitted_upper_z": 25.0,
+          "observed_z_range": [
+            25.0,
+            25.0
+          ]
+        },
+        "height_m": 4.0,
+        "ground_z": 24.99999999999999,
+        "reconstructed_top_z": 28.99999999999999,
+        "method": "external_height",
+        "n_points": 0,
+        "density_points_m2": 0.0,
+        "ground_method": "geometric_exterior_plane",
+        "ground_excluded_inside_buildings": null,
+        "ground_min_z": 25.0,
+        "ground_max_z": 25.0,
+        "ground_median_error_bound_m": null,
+        "reference_part_id": null,
+        "floor_height_m": null,
+        "roof_mode_z": null,
+        "roof_strength": 0.0,
+        "inferred_roof_support_fraction": null,
+        "roof_reference_z": null,
+        "storeys_above": 1,
+        "storeys_below": 0,
+        "reference_height_m": 4.0,
+        "reference_height_method": "synthetic_truth",
+        "reference_height_source": "3DLodExt synthetic tutorial"
+      },
+      "geometry": [
+        {
+          "type": "Solid",
+          "lod": "1",
+          "boundaries": [
+            [
+              [
+                [
+                  53,
+                  52,
+                  51,
+                  50
+                ]
+              ],
+              [
+                [
+                  54,
+                  55,
+                  56,
+                  57
+                ]
+              ],
+              [
+                [
+                  50,
+                  51,
+                  55,
+                  54
+                ]
+              ],
+              [
+                [
+                  51,
+                  52,
+                  56,
+                  55
+                ]
+              ],
+              [
+                [
+                  52,
+                  53,
+                  57,
+                  56
+                ]
+              ],
+              [
+                [
+                  53,
+                  50,
+                  54,
+                  57
+                ]
+              ]
+            ]
+          ],
+          "semantics": {
+            "surfaces": [
+              {
+                "type": "GroundSurface"
+              },
+              {
+                "type": "RoofSurface"
+              },
+              {
+                "type": "WallSurface"
+              }
+            ],
+            "values": [
+              [
+                0,
+                1,
+                2,
+                2,
+                2,
+                2
+              ]
+            ]
+          }
+        }
+      ],
+      "parents": [
+        "Building::b-sparse"
+      ]
+    }
+  },
+  "vertices": [
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      20000,
+      0,
+      0
+    ],
+    [
+      20000,
+      20000,
+      0
+    ],
+    [
+      0,
+      20000,
+      0
+    ],
+    [
+      6000,
+      6000,
+      0
+    ],
+    [
+      6000,
+      14000,
+      0
+    ],
+    [
+      14000,
+      14000,
+      0
+    ],
+    [
+      14000,
+      6000,
+      0
+    ],
+    [
+      0,
+      0,
+      6000
+    ],
+    [
+      20000,
+      0,
+      6000
+    ],
+    [
+      20000,
+      20000,
+      6000
+    ],
+    [
+      0,
+      20000,
+      6000
+    ],
+    [
+      6000,
+      6000,
+      6000
+    ],
+    [
+      6000,
+      14000,
+      6000
+    ],
+    [
+      14000,
+      14000,
+      6000
+    ],
+    [
+      14000,
+      6000,
+      6000
+    ],
+    [
+      26000,
+      0,
+      0
+    ],
+    [
+      26000,
+      20000,
+      0
+    ],
+    [
+      26000,
+      0,
+      2000
+    ],
+    [
+      26000,
+      20000,
+      2000
+    ],
+    [
+      20000,
+      20000,
+      2000
+    ],
+    [
+      20000,
+      0,
+      2000
+    ],
+    [
+      40000,
+      0,
+      0
+    ],
+    [
+      55000,
+      0,
+      0
+    ],
+    [
+      55000,
+      5000,
+      0
+    ],
+    [
+      45000,
+      5000,
+      0
+    ],
+    [
+      45000,
+      20000,
+      0
+    ],
+    [
+      40000,
+      20000,
+      0
+    ],
+    [
+      40000,
+      0,
+      8000
+    ],
+    [
+      55000,
+      0,
+      8000
+    ],
+    [
+      55000,
+      5000,
+      8000
+    ],
+    [
+      45000,
+      5000,
+      8000
+    ],
+    [
+      45000,
+      20000,
+      8000
+    ],
+    [
+      40000,
+      20000,
+      8000
+    ],
+    [
+      76000,
+      0,
+      0
+    ],
+    [
+      76000,
+      6000,
+      0
+    ],
+    [
+      70000,
+      6000,
+      0
+    ],
+    [
+      70000,
+      0,
+      0
+    ],
+    [
+      76000,
+      0,
+      5000
+    ],
+    [
+      76000,
+      6000,
+      5000
+    ],
+    [
+      70000,
+      6000,
+      5000
+    ],
+    [
+      70000,
+      0,
+      5000
+    ],
+    [
+      86000,
+      0,
+      0
+    ],
+    [
+      86000,
+      6000,
+      0
+    ],
+    [
+      80000,
+      6000,
+      0
+    ],
+    [
+      80000,
+      0,
+      0
+    ],
+    [
+      86000,
+      0,
+      5000
+    ],
+    [
+      86000,
+      6000,
+      5000
+    ],
+    [
+      80000,
+      6000,
+      5000
+    ],
+    [
+      80000,
+      0,
+      5000
+    ],
+    [
+      103000,
+      0,
+      0
+    ],
+    [
+      103000,
+      2000,
+      0
+    ],
+    [
+      100000,
+      2000,
+      0
+    ],
+    [
+      100000,
+      0,
+      0
+    ],
+    [
+      103000,
+      0,
+      4000
+    ],
+    [
+      103000,
+      2000,
+      4000
+    ],
+    [
+      100000,
+      2000,
+      4000
+    ],
+    [
+      100000,
+      0,
+      4000
+    ]
+  ],
+  "lodext": {
+    "vertical_reference": "local_relative",
+    "z_unit": "m",
+    "clamping_applied": false,
+    "height_source": "lidar",
+    "input_contract": "0.2"
+  }
+}

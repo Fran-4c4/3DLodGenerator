@@ -1,0 +1,50 @@
+{
+  "buildings": {
+    "status": "complete",
+    "dataset_id": "canal-neighbourhood-buildings",
+    "source_objects": 101,
+    "source_buildings": 48,
+    "source_parts": 53,
+    "resolved_units": 53,
+    "unresolved_units": 0,
+    "excluded_objects": 0,
+    "methods": {
+      "direct": 53
+    },
+    "models": {
+      "0": {
+        "objects": 101,
+        "geometry_objects": 53,
+        "closed_shells": 0,
+        "faces": 53,
+        "vertices": 227
+      },
+      "1": {
+        "objects": 101,
+        "geometry_objects": 53,
+        "closed_shells": 53,
+        "faces": 338,
+        "vertices": 459
+      }
+    }
+  },
+  "surfaces": {
+    "status": "complete",
+    "source_objects": 193,
+    "resolved_objects": 193,
+    "unresolved_objects": 0,
+    "classes": {
+      "Road": 2,
+      "Water": 1,
+      "Forest": 2,
+      "Terrain": 188
+    },
+    "triangles": 5288,
+    "stitching_applied": false,
+    "minimum_product_complete": false
+  },
+  "rendering": "Composition only; source coordinates and generated heights retained",
+  "roof_nominal_points_m2": 5,
+  "ground_spacing_m": 2,
+  "high_tail_part": "block-01-main"
+}

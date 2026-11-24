@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 520" role="img" aria-labelledby="title desc">
+<title id="title">A narrow body can have few points but useful density</title>
+<desc id="desc">A two square metre body contains eight roof observations, giving four points per square metre. An excessive inward buffer removes its sampling area. Keeping support allows a reliable low height to be retained when the observations agree.</desc>
+<style>text{font-family:system-ui,sans-serif;fill:#253b46}.heading{font-size:27px;font-weight:650}.label{font-size:22px}.small{font-size:19px}</style>
+<rect width="1100" height="520" rx="18" fill="#f4f7f8"/>
+<text x="35" y="45" class="heading">Few observations need not mean poor coverage</text>
+<text x="35" y="80" class="small">Illustrative plan · the body's footprint remains unchanged in the output</text>
+<text x="55" y="145" class="label">Retain support on narrow bodies</text>
+<rect x="85" y="190" width="320" height="100" fill="#e1b29d" stroke="#a65c48" stroke-width="3"/>
+<g fill="#914d39"><circle cx="125" cy="220" r="7"/><circle cx="205" cy="220" r="7"/><circle cx="285" cy="220" r="7"/><circle cx="365" cy="220" r="7"/><circle cx="125" cy="260" r="7"/><circle cx="205" cy="260" r="7"/><circle cx="285" cy="260" r="7"/><circle cx="365" cy="260" r="7"/></g>
+<text x="85" y="335" class="label">8 points / 2 m² = 4 points/m²</text>
+<text x="615" y="145" class="label">Excessive inward buffering</text>
+<rect x="650" y="190" width="320" height="100" fill="#eaded7" stroke="#a65c48" stroke-width="3"/>
+<path d="M665 240H955" stroke="#ad6753" stroke-width="3" stroke-dasharray="6 5"/>
+<path d="M785 215L835 265 M835 215L785 265" stroke="#ad6753" stroke-width="5"/>
+<text x="640" y="335" class="label">Sampling area can disappear</text>
+<text x="35" y="405" class="label">Evaluate count, density and agreement in roof elevation together.</text>
+<text x="35" y="448" class="small">A low, well-supported body can keep its measured height even if storey data suggest more.</text>
+<text x="35" y="483" class="small">Without enough reliable evidence, use an explicit fallback or leave the height unresolved.</text>
+</svg>

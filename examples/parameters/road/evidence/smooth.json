@@ -1,0 +1,87 @@
+{
+  "summary": {
+    "status": "complete",
+    "source_objects": 1,
+    "resolved_objects": 1,
+    "unresolved_objects": 0,
+    "classes": {
+      "Road": 1
+    },
+    "triangles": 10,
+    "stitching_applied": false,
+    "minimum_product_complete": false
+  },
+  "objects": [
+    {
+      "source_id": "road",
+      "source_class": "Road",
+      "coverage_complete": true,
+      "status": "resolved",
+      "method": "boundary_rank",
+      "sample_points": 12,
+      "water_level_z": null,
+      "components": [
+        {
+          "boundary_vertices": 12,
+          "boundary_support_counts": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "borrowed_boundary_indices": [],
+          "raw_boundary_z": [
+            25.0,
+            25.306,
+            25.327,
+            28.629,
+            25.933,
+            25.902,
+            26.211000000000002,
+            25.900000000000002,
+            25.858,
+            25.486,
+            25.424,
+            25.14
+          ],
+          "boundary_z": [
+            25.027339915438272,
+            25.280366036644356,
+            25.313763162504298,
+            25.624755286348428,
+            25.673085644372296,
+            25.913812767847443,
+            26.18079984032936,
+            25.92375136437441,
+            25.877527790749163,
+            25.4820191972335,
+            25.422417373250735,
+            25.132202551628357
+          ],
+          "interior_xy_observations": 0,
+          "coincident_xy_returns_combined": 0,
+          "road_fit": {
+            "status": "flattened",
+            "outlier_vertices": [
+              3,
+              4
+            ],
+            "changed_vertices": 12,
+            "fit_rms_m": 0.019120642429370987
+          },
+          "triangles": 10
+        }
+      ],
+      "triangles": 10,
+      "area_m2": 57.50000000046566
+    }
+  ]
+}

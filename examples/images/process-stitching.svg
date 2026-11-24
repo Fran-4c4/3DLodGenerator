@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 540" role="img" aria-labelledby="title desc">
+<title id="title">Scene stitching is a required next stage</title>
+<desc id="desc">A conceptual section shows separately lifted terrain and road boundaries, followed by a terrain transition to the road and a vertical face down to level water. This is a design illustration; scene stitching is not implemented.</desc>
+<style>text{font-family:system-ui,sans-serif;fill:#253b46}.heading{font-size:27px;font-weight:650}.label{font-size:22px}.small{font-size:19px}</style>
+<rect width="1100" height="540" rx="18" fill="#f4f7f8"/>
+<text x="35" y="45" class="heading">A continuous scene needs shared-boundary decisions</text>
+<rect x="35" y="68" width="710" height="38" rx="7" fill="#fff1c9"/>
+<text x="50" y="95" class="small">DESIGN SCHEMATIC · required scene stitching is not implemented yet</text>
+<text x="35" y="148" class="label">Individual surfaces: current stage</text>
+<path d="M75 247L200 220L345 238" fill="none" stroke="#92ac7b" stroke-width="8"/>
+<path d="M345 205H680" stroke="#87969e" stroke-width="8"/>
+<path d="M680 267H1020" stroke="#65a7c4" stroke-width="8"/>
+<path d="M345 205V238 M680 205V267" stroke="#bf705c" stroke-width="3" stroke-dasharray="5 5"/>
+<text x="150" y="290" class="small">Terrain</text><text x="470" y="255" class="small">Road</text><text x="820" y="310" class="small">Level water</text>
+<text x="35" y="365" class="label">Connected result: required behaviour</text>
+<path d="M75 455L200 428L345 413" fill="none" stroke="#92ac7b" stroke-width="8"/>
+<path d="M345 413H680" stroke="#87969e" stroke-width="8"/>
+<path d="M680 413V475" stroke="#ad8c72" stroke-width="8"/>
+<path d="M680 475H1020" stroke="#65a7c4" stroke-width="8"/>
+<text x="75" y="500" class="small">Soft surface meets the road</text>
+<text x="475" y="455" class="small">Hard surface retained</text>
+<text x="760" y="430" class="small">Vertical face closes the step</text>
+<text x="35" y="531" class="small">Illustrates class relationships only; bridges, clearance and junction rules require separate validation.</text>
+</svg>

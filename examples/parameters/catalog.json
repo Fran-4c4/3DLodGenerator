@@ -1,0 +1,40 @@
+{
+  "families": [
+    {
+      "id": "erosion",
+      "title": "Boundary uncertainty and edge contamination"
+    },
+    {
+      "id": "classes",
+      "title": "Building results are independent of LAS labels"
+    },
+    {
+      "id": "density",
+      "title": "Small bodies: count and density"
+    },
+    {
+      "id": "auxiliary",
+      "title": "Supplied-height fallback"
+    },
+    {
+      "id": "floor-reference",
+      "title": "Storey-height reference"
+    },
+    {
+      "id": "ground",
+      "title": "Finding valid DTM ground"
+    },
+    {
+      "id": "lod",
+      "title": "LoD0 and LoD1"
+    },
+    {
+      "id": "water",
+      "title": "Water elevation percentile"
+    },
+    {
+      "id": "road",
+      "title": "Road filtering and smoothing"
+    }
+  ]
+}

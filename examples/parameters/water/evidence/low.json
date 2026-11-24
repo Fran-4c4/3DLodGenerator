@@ -1,0 +1,52 @@
+{
+  "summary": {
+    "status": "complete",
+    "source_objects": 1,
+    "resolved_objects": 1,
+    "unresolved_objects": 0,
+    "classes": {
+      "Water": 1
+    },
+    "triangles": 2,
+    "stitching_applied": false,
+    "minimum_product_complete": false
+  },
+  "objects": [
+    {
+      "source_id": "pond",
+      "source_class": "Water",
+      "coverage_complete": true,
+      "status": "resolved",
+      "method": "flat_rank",
+      "sample_points": 289,
+      "water_level_z": 24.0,
+      "components": [
+        {
+          "boundary_vertices": 4,
+          "boundary_support_counts": [],
+          "borrowed_boundary_indices": [],
+          "raw_boundary_z": [
+            24.0,
+            24.0,
+            24.0,
+            24.0
+          ],
+          "boundary_z": [
+            24.0,
+            24.0,
+            24.0,
+            24.0
+          ],
+          "interior_xy_observations": 0,
+          "coincident_xy_returns_combined": 0,
+          "road_fit": {
+            "status": "not_applicable"
+          },
+          "triangles": 2
+        }
+      ],
+      "triangles": 2,
+      "area_m2": 64.0
+    }
+  ]
+}

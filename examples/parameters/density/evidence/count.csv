@@ -1,0 +1,3 @@
+key,source_id,kind,parent_id,status,method,height_m,ground_z,ground_method,ground_excluded_inside_buildings,ground_min_z,ground_max_z,ground_median_error_bound_m,reconstructed_top_z,reference_role,reference_height_m,reference_part_id,floor_height_m,inferred_roof_support_fraction,roof_reference_z,n_points,sampled_roof_points,density_points_m2,flags,issues
+Building::example,example,Building,,parent,,,,,,,,,,,,,,,,,,,,
+BuildingPart::terrace,terrace,BuildingPart,example,resolved,roof_surface,2.0000000000000107,25.0,,,,,,27.00000000000001,comparison_only,,,,,27.00000000000001,8,8,4.0,insufficient_point_quantity;no_positive_storeys_for_fallback;spatial_roof_surface;lod1_flat_surface_approximation,

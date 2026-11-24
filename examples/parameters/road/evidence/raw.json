@@ -1,0 +1,83 @@
+{
+  "summary": {
+    "status": "complete",
+    "source_objects": 1,
+    "resolved_objects": 1,
+    "unresolved_objects": 0,
+    "classes": {
+      "Road": 1
+    },
+    "triangles": 10,
+    "stitching_applied": false,
+    "minimum_product_complete": false
+  },
+  "objects": [
+    {
+      "source_id": "road",
+      "source_class": "Road",
+      "coverage_complete": true,
+      "status": "resolved",
+      "method": "boundary_rank",
+      "sample_points": 12,
+      "water_level_z": null,
+      "components": [
+        {
+          "boundary_vertices": 12,
+          "boundary_support_counts": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "borrowed_boundary_indices": [],
+          "raw_boundary_z": [
+            25.0,
+            25.306,
+            25.327,
+            28.629,
+            25.933,
+            25.902,
+            26.211000000000002,
+            25.900000000000002,
+            25.858,
+            25.486,
+            25.424,
+            25.14
+          ],
+          "boundary_z": [
+            25.0,
+            25.306,
+            25.327,
+            28.629,
+            25.933,
+            25.902,
+            26.211000000000002,
+            25.900000000000002,
+            25.858,
+            25.486,
+            25.424,
+            25.14
+          ],
+          "interior_xy_observations": 0,
+          "coincident_xy_returns_combined": 0,
+          "road_fit": {
+            "status": "disabled",
+            "outlier_vertices": [],
+            "changed_vertices": 0
+          },
+          "triangles": 10
+        }
+      ],
+      "triangles": 10,
+      "area_m2": 57.50000000046566
+    }
+  ]
+}

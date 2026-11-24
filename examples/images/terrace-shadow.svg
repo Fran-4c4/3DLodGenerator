@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" role="img" aria-labelledby="title desc">
+<title id="title">An invented storey creates an invented shadow</title>
+<desc id="desc">Two illustrative vertical sections at the same scale. A six metre obstruction casts a 10.39 metre shadow on a horizontal receiving roof at a solar elevation of thirty degrees. A genuine 1.8 metre obstruction casts a 3.12 metre shadow.</desc>
+<style>text{font-family:system-ui,sans-serif;fill:#253b46} .heading{font-size:27px;font-weight:650}.label{font-size:22px}.small{font-size:19px}.dim{stroke:#46616d;stroke-width:2;fill:none}.plane{stroke:#46616d;stroke-width:4}</style>
+<rect width="1100" height="720" rx="18" fill="#f4f7f8"/>
+<text x="35" y="45" class="heading">Roof-height errors change the usable solar area</text>
+<text x="35" y="78" class="small">Illustrative sections · identical scale and receiving plane · solar elevation α = 30°</text>
+<text x="35" y="125" class="label" fill="#a04638">1. A low body incorrectly raised to a full volume</text>
+<path d="M250 150 L562 330 L250 330Z" fill="#d8dce1"/>
+<path d="M250 150 L562 330" stroke="#d4a33a" stroke-width="3" stroke-dasharray="8 6"/>
+<rect x="160" y="150" width="90" height="180" fill="#cf7b65" stroke="#a95f4f" stroke-width="2"/>
+<path d="M80 330H1010" class="plane"/>
+<path d="M145 150H130V330H145 M250 348V360H562V348" class="dim"/>
+<text x="48" y="247" class="label">6.0 m</text>
+<text x="292" y="390" class="label">Shadow: 10.39 m</text>
+<text x="635" y="300" class="label">Receiving roof / analysis plane</text>
+<text x="35" y="438" class="label">2. A genuine low terrace or rooftop body retained</text>
+<path d="M250 546 L344 600 L250 600Z" fill="#d8dce1"/>
+<path d="M250 546 L344 600" stroke="#d4a33a" stroke-width="3" stroke-dasharray="8 6"/>
+<rect x="160" y="546" width="90" height="54" fill="#89b7a5" stroke="#4b8373" stroke-width="2"/>
+<path d="M80 600H1010" class="plane"/>
+<path d="M145 546H130V600H145 M250 618V630H344V618" class="dim"/>
+<text x="48" y="580" class="label">1.8 m</text>
+<text x="370" y="635" class="label">Shadow: 3.12 m</text>
+<text x="635" y="570" class="label">Same receiving roof / analysis plane</text>
+<text x="35" y="678" class="small">L = h / tan(α) · h is height above the receiving plane, not absolute elevation.</text>
+<text x="35" y="706" class="small">Illustrative heights; both shadow lengths use the same solar elevation.</text>
+</svg>

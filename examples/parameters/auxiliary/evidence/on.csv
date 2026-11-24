@@ -1,0 +1,4 @@
+key,source_id,kind,parent_id,status,method,height_m,ground_z,ground_method,ground_excluded_inside_buildings,ground_min_z,ground_max_z,ground_median_error_bound_m,reconstructed_top_z,reference_role,reference_height_m,reference_part_id,floor_height_m,inferred_roof_support_fraction,roof_reference_z,n_points,sampled_roof_points,density_points_m2,flags,issues
+Building::example,example,Building,,parent,,,,,,,,,,,,,,,,,,,,
+BuildingPart::main,main,BuildingPart,example,resolved,direct,6.0,25.0,,,,,,31.0,comparison_only,6.0,,3.0,,31.0,144,144,4.0,,
+BuildingPart::sparse,sparse,BuildingPart,example,resolved,external_height,4.0,25.0,,,,,,29.0,input,4.0,,,,,0,0,0.0,no_roof_points;no_positive_storeys_for_fallback;explicit_external_height_fallback,

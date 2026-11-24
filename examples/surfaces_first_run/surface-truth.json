@@ -1,0 +1,25 @@
+{
+  "description": "Original synthetic controls, not surveyed data",
+  "Road": {
+    "area_m2": 156.0,
+    "minimum_z": 25,
+    "maximum_z": 27.6
+  },
+  "Terrain": {
+    "area_m2": 100,
+    "peak_xyz": [
+      500005.0,
+      3100035.0,
+      29
+    ]
+  },
+  "Forest": {
+    "area_m2": 100,
+    "minimum_z": 26,
+    "maximum_z": 26.5
+  },
+  "Water": {
+    "area_m2": 100,
+    "level_z": 24
+  }
+}

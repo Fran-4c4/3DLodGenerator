@@ -1,0 +1,15 @@
+{
+  "config_version": "1",
+  "contract_version": "0.2",
+  "dataset_id": "synthetic-first-run",
+  "geometry_mode": "parts",
+  "footprints": "footprints.gpkg",
+  "dtm": "dtm.tif",
+  "lidar": [],
+  "working_epsg": 25828,
+  "vertical_reference": "local_relative",
+  "lods": [
+    0
+  ],
+  "external_height_fallback": false
+}

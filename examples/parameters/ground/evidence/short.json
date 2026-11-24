@@ -1,0 +1,86 @@
+{
+  "summary": {
+    "status": "partial",
+    "dataset_id": "parameter-ground",
+    "source_objects": 2,
+    "source_buildings": 1,
+    "source_parts": 1,
+    "resolved_units": 0,
+    "unresolved_units": 1,
+    "excluded_objects": 0,
+    "methods": {
+      "unresolved": 1
+    },
+    "models": {
+      "1": {
+        "objects": 2,
+        "geometry_objects": 1,
+        "closed_shells": 0,
+        "faces": 1,
+        "vertices": 4
+      }
+    }
+  },
+  "objects": [
+    {
+      "key": "BuildingPart::main",
+      "source_id": "main",
+      "kind": "BuildingPart",
+      "parent_id": "example",
+      "issues": [],
+      "parent_relation": {
+        "outside_area_m2": 0.0,
+        "overlap_fraction": 1.0
+      },
+      "part_id": "BuildingPart::main",
+      "building_id": "example",
+      "height_m": null,
+      "method": "unresolved",
+      "ground_z": null,
+      "roof_mode_z": null,
+      "n_points": 0,
+      "density_points_m2": 0.0,
+      "roof_strength": 0.0,
+      "bimodal": false,
+      "floor_height_m": null,
+      "reference_part_id": null,
+      "flags": [
+        "no_roof_points",
+        "missing_ground"
+      ],
+      "inferred_roof_support_fraction": null,
+      "roof_reference_z": null,
+      "sample_area_m2": 100.0,
+      "erosion": "not_applied_geometry_attribution",
+      "coverage_complete": true,
+      "ground_samples": 0,
+      "ground_candidates": 0,
+      "ground_radius_m": null,
+      "ground_free_area_m2": 0.0,
+      "building_surfaces": {
+        "selection_policy": "xyz_footprints_adjacent_surfaces",
+        "accepted": false,
+        "original_representatives": 400,
+        "retained_surface_representatives": 0,
+        "spacing_m": 0.5,
+        "planes": [],
+        "candidates": [],
+        "rejected_neighbour_planes": [],
+        "neighbour_ids": [],
+        "source_classes_used": false,
+        "independent_interior_support": false,
+        "inclined_continuous_roof": false,
+        "geometry_envelope_required": false,
+        "selection_basis": "spatial_support",
+        "context_floor_height_m": null,
+        "roof_z": null
+      },
+      "sampled_roof_points": 0,
+      "reference_height_m": null,
+      "reference_role": "comparison_only",
+      "delta_from_reference_m": null,
+      "reconstructed_top_z": null,
+      "status": "unresolved"
+    }
+  ]
+}

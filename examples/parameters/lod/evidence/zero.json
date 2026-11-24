@@ -1,0 +1,104 @@
+{
+  "summary": {
+    "status": "complete",
+    "dataset_id": "parameter-lod",
+    "source_objects": 3,
+    "source_buildings": 1,
+    "source_parts": 2,
+    "resolved_units": 2,
+    "unresolved_units": 0,
+    "excluded_objects": 0,
+    "methods": {
+      "dtm_surface": 2
+    },
+    "models": {
+      "0": {
+        "objects": 3,
+        "geometry_objects": 2,
+        "closed_shells": 0,
+        "faces": 2,
+        "vertices": 7
+      }
+    }
+  },
+  "objects": [
+    {
+      "key": "BuildingPart::main",
+      "source_id": "main",
+      "kind": "BuildingPart",
+      "parent_id": "example",
+      "issues": [],
+      "parent_relation": {
+        "outside_area_m2": 0.0,
+        "overlap_fraction": 1.0
+      },
+      "part_id": "BuildingPart::main",
+      "building_id": "example",
+      "height_m": null,
+      "method": "dtm_surface",
+      "ground_z": 25.0,
+      "roof_mode_z": null,
+      "n_points": 0,
+      "density_points_m2": 0.0,
+      "roof_strength": 0.0,
+      "bimodal": false,
+      "floor_height_m": null,
+      "reference_part_id": null,
+      "flags": [],
+      "inferred_roof_support_fraction": null,
+      "roof_reference_z": null,
+      "sample_area_m2": 64.0,
+      "erosion": "not_attempted",
+      "coverage_complete": false,
+      "ground_samples": 89,
+      "ground_candidates": 89,
+      "ground_radius_m": 8.0,
+      "ground_free_area_m2": 441.73910339480597,
+      "sampled_roof_points": 0,
+      "reference_height_m": null,
+      "reference_role": "comparison_only",
+      "delta_from_reference_m": null,
+      "reconstructed_top_z": null,
+      "status": "resolved"
+    },
+    {
+      "key": "BuildingPart::terrace",
+      "source_id": "terrace",
+      "kind": "BuildingPart",
+      "parent_id": "example",
+      "issues": [],
+      "parent_relation": {
+        "outside_area_m2": 0.0,
+        "overlap_fraction": 1.0
+      },
+      "part_id": "BuildingPart::terrace",
+      "building_id": "example",
+      "height_m": null,
+      "method": "dtm_surface",
+      "ground_z": 25.0,
+      "roof_mode_z": null,
+      "n_points": 0,
+      "density_points_m2": 0.0,
+      "roof_strength": 0.0,
+      "bimodal": false,
+      "floor_height_m": null,
+      "reference_part_id": null,
+      "flags": [],
+      "inferred_roof_support_fraction": null,
+      "roof_reference_z": null,
+      "sample_area_m2": 15.0,
+      "erosion": "not_attempted",
+      "coverage_complete": false,
+      "ground_samples": 59,
+      "ground_candidates": 59,
+      "ground_radius_m": 8.0,
+      "ground_free_area_m2": 265.334185090867,
+      "sampled_roof_points": 0,
+      "reference_height_m": null,
+      "reference_role": "comparison_only",
+      "delta_from_reference_m": null,
+      "reconstructed_top_z": null,
+      "status": "resolved"
+    }
+  ]
+}

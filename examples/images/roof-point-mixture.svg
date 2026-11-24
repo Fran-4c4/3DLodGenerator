@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 580" role="img" aria-labelledby="title desc">
+<title id="title">A shifted footprint can collect observations from two roofs</title>
+<desc id="desc">Illustrative section. Twenty selected observations belong to a six metre roof and four belong to a ten metre neighbour. The high percentile selects the neighbour while the dominant elevation group selects the six metre roof.</desc>
+<style>text{font-family:system-ui,sans-serif;fill:#253b46}.heading{font-size:27px;font-weight:650}.label{font-size:22px}.small{font-size:19px}.point{fill:#914d39;stroke:white;stroke-width:1}</style>
+<rect width="1100" height="580" rx="18" fill="#f4f7f8"/>
+<text x="35" y="45" class="heading">The highest observations may belong to another body</text>
+<text x="35" y="80" class="small">Illustrative section · heights above the same ground · selected observations shown as dots</text>
+<rect x="40" y="260" width="310" height="90" fill="#df9b83"/>
+<rect x="350" y="200" width="150" height="150" fill="#b9c5cb"/>
+<path d="M30 350H530" stroke="#567661" stroke-width="4"/>
+<path d="M120 260V375H430V200" fill="none" stroke="#6b5688" stroke-width="3" stroke-dasharray="7 5"/>
+<text x="85" y="230" class="label">Target roof: 6 m</text>
+<text x="325" y="170" class="label">Neighbour: 10 m</text>
+<text x="115" y="410" class="label">Shifted sampling footprint</text>
+<g class="point"><circle cx="125" cy="260" r="5"/><circle cx="136" cy="260" r="5"/><circle cx="147" cy="260" r="5"/><circle cx="158" cy="260" r="5"/><circle cx="169" cy="260" r="5"/><circle cx="180" cy="260" r="5"/><circle cx="191" cy="260" r="5"/><circle cx="202" cy="260" r="5"/><circle cx="213" cy="260" r="5"/><circle cx="224" cy="260" r="5"/><circle cx="235" cy="260" r="5"/><circle cx="246" cy="260" r="5"/><circle cx="257" cy="260" r="5"/><circle cx="268" cy="260" r="5"/><circle cx="279" cy="260" r="5"/><circle cx="290" cy="260" r="5"/><circle cx="301" cy="260" r="5"/><circle cx="312" cy="260" r="5"/><circle cx="323" cy="260" r="5"/><circle cx="334" cy="260" r="5"/></g>
+<g fill="#637b89" stroke="white"><circle cx="365" cy="200" r="6"/><circle cx="385" cy="200" r="6"/><circle cx="405" cy="200" r="6"/><circle cx="425" cy="200" r="6"/></g>
+<rect x="580" y="130" width="480" height="90" rx="10" fill="#e9d6cc"/>
+<text x="600" y="168" class="label">20 observations on the target roof</text>
+<text x="600" y="199" class="small">4 observations from the higher neighbour</text>
+<rect x="580" y="245" width="480" height="70" rx="10" fill="#f0ded8"/>
+<text x="600" y="287" class="label">90th percentile → 10 m</text>
+<rect x="580" y="340" width="480" height="70" rx="10" fill="#d1e4da"/>
+<text x="600" y="382" class="label">Dominant elevation group → 6 m</text>
+<text x="35" y="475" class="label">Choose the supported roof group, not the upper tail.</text>
+<text x="35" y="515" class="small">A strong second group reduces confidence. If the neighbour dominates, the mode can be wrong too.</text>
+<text x="35" y="550" class="small">The estimator does not move footprints or register the point cloud automatically.</text>
+</svg>

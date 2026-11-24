@@ -1,0 +1,11 @@
+{
+  "config_version": "1",
+  "surface_contract": "0.1",
+  "dataset_id": "synthetic-surfaces",
+  "polygons": "footprints.gpkg",
+  "lidar": [
+    "surfaces.las"
+  ],
+  "working_epsg": 25828,
+  "vertical_reference": "local_relative"
+}
